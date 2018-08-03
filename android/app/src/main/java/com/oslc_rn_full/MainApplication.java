@@ -3,6 +3,11 @@ package com.oslc_rn_full;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.wonday.pdf.RCTPdfView;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.keyee.pdfview.PDFView;
+import com.liyuan.pdfviewer.PdfViewerPackage;
+import com.reactlibrary.PDFViewPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -22,7 +27,12 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new MainReactPackage(),
+            new RCTPdfView(),
+            new RNFetchBlobPackage(),
+            new PDFView(),
+            new PdfViewerPackage(),
+            new PDFViewPackage()
       );
     }
 
