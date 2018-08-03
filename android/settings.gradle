@@ -1,0 +1,3 @@
+rootProject.name = 'oslc_rn_full'
+
+include ':app'
