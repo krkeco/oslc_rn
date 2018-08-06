@@ -27,6 +27,12 @@ import NavigatorView from './NavigatorView.js';
 
 import Hyperlink from 'react-native-hyperlink';
 
+import FontAwesome, { Icons } from 'react-native-fontawesome';
+
+//not implemented yet
+import PayPal from 'react-native-paypal-wrapper';
+
+
 type Props = {};
 
 export default class MainNavigator extends Component<Props> {
@@ -48,7 +54,6 @@ export default class MainNavigator extends Component<Props> {
   }
 
   componentWillMount(){
-
 
   }
 
@@ -109,7 +114,13 @@ export default class MainNavigator extends Component<Props> {
 
     return (
       <View style={styles.container}>
-          
+
+ <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
+          <FontAwesome style={{fontFamily: 'fontawesome-webfont'}}>{Icons.chevronLeft}</FontAwesome>
+          Text
+        </Text>
+
+
         {menu}
 
         {content}
