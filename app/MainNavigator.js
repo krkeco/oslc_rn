@@ -44,6 +44,7 @@ export default class MainNavigator extends Component<Props> {
       
       //sermon series
       series: [],
+      calendar: [],
 
       current_index: 0,
       
@@ -85,7 +86,8 @@ export default class MainNavigator extends Component<Props> {
                 series = {this.state.series}/>}, 
 
         {name: 'calendar',
-        view: <CalendarView/>}, 
+        view: <CalendarView
+                calendar={this.state.calendar}/>}, 
 
         {name: 'groups',
         view: <Text>groupView</Text>},
@@ -115,8 +117,8 @@ export default class MainNavigator extends Component<Props> {
     return (
       <View style={styles.container}>
 
+          <Text style={{fontFamily: 'fontawesome-webfont'}}>{Icons.chevronLeft}</Text>
  <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
-          <FontAwesome style={{fontFamily: 'fontawesome-webfont'}}>{Icons.chevronLeft}</FontAwesome>
           Text
         </Text>
 
@@ -125,13 +127,14 @@ export default class MainNavigator extends Component<Props> {
 
         {content}
 
-        <Text>{this.state.series.length}</Text>
-
         <SermonsAPI
           setSeries={(seriesApi) => {
             this.setState({series: seriesApi});
           }}/>
-        <CalendarAPI/>
+        <CalendarAPI
+          setCalendar={(calendarApi) => {
+            this.setState({calendar: calendarApi});
+          }}/>
 
       </View>
     );
