@@ -6,6 +6,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+
   },
   welcome: {
     fontSize: 20,
@@ -16,6 +17,9 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  normal_text: {
+    fontSize: 25,
   },
     pdf: {
         flex:1,

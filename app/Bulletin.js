@@ -29,8 +29,8 @@ export default class App extends Component<Props> {
 
   componentWillMount(){
     var d = new Date();
-    var day = d.getDay(),
-    diff = d.getDate() - day + (day == 0 ? -6:0); // adjust when day is sunday
+    var day = d.getDay();
+    diff = d.getDate() - day + (day == 0 ? 0:0); // adjust when day is sunday
     
     new_day =  new Date(d.setDate(diff));
     year = d.getFullYear();
@@ -50,6 +50,7 @@ export default class App extends Component<Props> {
     return (
      
       <View style={{flex: 1}}>
+      <Text>{this.state.dateString}</Text>
        <Pdf
         source={source}
         onLoadComplete={(numberOfPages,filePath)=>{

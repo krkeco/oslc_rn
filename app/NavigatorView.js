@@ -9,6 +9,9 @@ import {
 
 import styles from './styles.js';
 
+
+import Hyperlink from 'react-native-hyperlink'
+
 type Props = {};
 export default class NavigatorView extends Component<Props> {
  constructor(props) {
@@ -30,17 +33,36 @@ export default class NavigatorView extends Component<Props> {
 
         <TouchableOpacity
         onPress={this.props.isBulletin}>
-        <Text>Bulletin</Text>
+        <Text style={styles.normal_text}>Bulletin</Text>
         </TouchableOpacity>
 
          <TouchableOpacity
         onPress={this.props.isCalendar}>
-        <Text>Calendar</Text>
+        <Text style={styles.normal_text}>Calendar</Text>
         </TouchableOpacity>
 
          <TouchableOpacity
         onPress={this.props.isRecording}>
-        <Text>Sermons</Text>
+        <Text style={styles.normal_text}>Sermons</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        onPress={this.props.isGroups}>
+        <Text style={styles.normal_text}>Groups</Text>
+        </TouchableOpacity>
+
+        <Hyperlink 
+          linkDefault={ true } 
+          linkText='Prayer Request'>
+
+          <Text  style={styles.normal_text}>
+            requests@prayers.oslcarcadia.com
+          </Text>
+        </Hyperlink>
+
+         <TouchableOpacity
+        onPress={this.props.isDonate}>
+        <Text style={styles.normal_text}>Donate</Text>
         </TouchableOpacity>
 
       </View>
