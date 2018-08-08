@@ -15,6 +15,7 @@ mockups:
 		overviews
 		donates
 	volunteer/need help
+	Get connected
 		sunday school
 		sound room
 		old people muscle
@@ -27,3 +28,5 @@ mockups:
 >			apis (populate props)
 >				main app nav (navigate views)
 >					views: use props from apis to display
+
+social media tab?

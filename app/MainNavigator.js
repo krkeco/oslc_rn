@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   Text,
   Dimensions,
+  ScrollView,
   View
 } from 'react-native';
 
@@ -44,7 +45,19 @@ export default class MainNavigator extends Component<Props> {
       
       //sermon series
       series: [],
-      calendar: [],
+      calendar: {
+        summary: 'a summary',
+        status: 'confirmed',
+        items: [
+          {
+            summary: 'item summary',
+            start: {
+              dateTime: '2018-08-08',
+
+            }
+          }
+        ]
+      },
 
       current_index: 0,
       
@@ -114,6 +127,18 @@ export default class MainNavigator extends Component<Props> {
         
         </TouchableOpacity>;
 
+
+          let text = <Text>calendar: waiting</Text>;
+          if(this.state.calendar != null
+            && this.state.calendar != undefined){
+            text =<View>
+             <Text>calendar: {this.state.calendar.summary}</Text>
+             <Text>calendar: {this.state.calendar.items[0].start.dateTime}</Text>
+
+             </View>;
+
+          }
+
     return (
       <View style={styles.container}>
 
@@ -136,6 +161,8 @@ export default class MainNavigator extends Component<Props> {
             this.setState({calendar: calendarApi});
           }}/>
 
+
+          {text}
       </View>
     );
   }
