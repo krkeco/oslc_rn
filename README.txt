@@ -1,3 +1,13 @@
+TODO:
+>	full view of bulletin
+	change sermon-app bulletin to download only
+>	remove bulletinAPI
+
+dev info 
+>	to __DEV__ info
+>	position absolute
+
+
 mobile app 
 mockups:
 >	this weeks bulletin

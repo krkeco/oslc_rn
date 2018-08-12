@@ -109,8 +109,17 @@ export default class MainNavigator extends Component<Props> {
               }, 
 
         {name: 'calendar',
-        view: <CalendarView
-                calendar={this.state.calendar}/>}, 
+        view: 
+          <View
+            style={[{height: '100%', width: '100%'}]}>
+            <WebView
+              source={{uri: 'https://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&view=Agenda'}}
+              style={{height: Dimensions.get('window').height}}
+              />
+          </View>
+          // <CalendarView
+          //   calendar={this.state.calendar}/>
+              }, 
 
         {name: 'groups',
         view: 
@@ -139,7 +148,7 @@ export default class MainNavigator extends Component<Props> {
     let menu =
 
         <View
-        style={{position: 'absolute', top: 10, left: 10}}>
+        style={{position: 'absolute', top: 20, left: 10}}>
         <TouchableOpacity
           onPress={() => {this.navigate(0);}}>
         
