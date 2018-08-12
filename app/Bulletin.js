@@ -46,11 +46,15 @@ export default class App extends Component<Props> {
     let url = 'https://oslcarcadia.com/bulletins/'+ this.state.dateString+'.pdf';
     const source = {uri: url,cache:true};
 
+    let dev = null;
+    // if(__DEV__){
+    //   <Text>{this.state.dateString}</Text>
+    // }
 
     return (
      
       <View style={{flex: 1}}>
-      <Text>{this.state.dateString}</Text>
+      {dev}
        <Pdf
         source={source}
         onLoadComplete={(numberOfPages,filePath)=>{

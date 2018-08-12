@@ -46,19 +46,28 @@ export default class CalendarView extends Component<Props> {
             if (response.status >= 200 && response.status < 300) {
 
 
-              let calendarArray = JSON.parse(res); 
+              let calendarArray = JSON.parse(res);
+
+              let calendarViewDateArray = [];
+              // date = new Date();
+              // dateString = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+
+              // calendarArray.items.map((item, index) => {
+              //   //cehck that all items are still real
+              //   if(item.status == 'confirmed'
+              //   && item.start != null && item.start != undefined){
+              //         // {'2012-05-22': [{text: 'item 1 - any js object'}],
+              //       calendarViewDateArray.push(item.start.dateTime.substring(0,10): item);
+
+              //       //if real, put inside an array object of the date of event
+
+              //       //then sort all events inside each day array
+              //        return <Text>{index} {item.start.dateTime}</Text> 
+              //   }
+              // }
+              // calendarArray.
 
               this.props.setCalendar(calendarArray);
-   
-    // Alert.alert(
-    //   'Calendar Found',
-    //   calendarArray.summary + 'accessed',
-    //   [
-    //     {text: 'Oops', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-    //     {text: 'Yes.', onPress: () => console.log('yesh') },
-    //   ],
-    //   { cancelable: true }
-    // );
       
             } else {
               let error = res;
@@ -86,16 +95,7 @@ export default class CalendarView extends Component<Props> {
             // this.setState({error: error});
             console.log("error " + error);
             // this.setState({showProgress: false});
-          
-    // Alert.alert(
-    //   'Calendar NOT Found',
-    //   'error: ' + error,
-    //   [
-    //     {text: 'Oops', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-    //     {text: 'Yes.', onPress: () => console.log('yesh') },
-    //   ],
-    //   { cancelable: true }
-    // );
+  
         }
 
       }

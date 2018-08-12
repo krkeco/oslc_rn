@@ -6,6 +6,8 @@ import {
   Alert,
   View,
   ScrollView,
+  WebView,
+  Dimensions,
 } from 'react-native';
 
 import styles from '../styles.js';
@@ -111,24 +113,22 @@ const workout = {key:'workout', color: 'green'};
 //   style={{}}
 // />;
 let text = null;
-if(this.state.calendar != null){
-  text = <ScrollView>
-      <Text>{this.state.calendar.items.length}</Text>
+// if(this.state.calendar != null){
+//   text = <ScrollView>
+//       <Text>{this.state.calendar.items.length}</Text>
 
     
-    {this.state.calendar.items.map((item, index) => {
-     if(item.status == 'confirmed'
-      && item.start != null && item.start != undefined){
-           return <Text>{index} {item.start.dateTime}</Text>
-         }
-         else{ return null;}
-    })}
-      <Text>{this.props.calendar.items[0].start.dateTime.substring(0,10)}</Text>
-    </ScrollView>;
-}
-
-    return (
-      <View style={styles.container}>
+    // {this.state.calendar.items.map((item, index) => {
+    //  if(item.status == 'confirmed'
+    //   && item.start != null && item.start != undefined){
+    //        return <Text>{index} {item.start.dateTime}</Text>
+//          }
+//          else{ return null;}
+//     })}
+//       <Text>{this.props.calendar.items[0].start.dateTime.substring(0,10)}</Text>
+//     </ScrollView>;
+// }
+let content =
    <Agenda
   
   items={this.state.calendar}
@@ -183,10 +183,20 @@ if(this.state.calendar != null){
   }}
   // agenda container style
   style={{width: 300, height: 300, flex: 1}}
-/>
+/>;
 
-{text}
-
+//
+   content = <WebView
+        source={{uri: 'https://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA'}}
+        style={{marginTop: 40, height: Dimensions.get('window').height}}
+      />;
+    return (
+     
+      <View
+          style={[{height: '100%', width: '100%'}]}>
+       
+        {content}
+        {text}
 
       </View>
     );
