@@ -111,9 +111,9 @@ export default class MainNavigator extends Component<Props> {
         {name: 'calendar',
         view: 
           <View
-            style={[{height: '100%', width: '100%'}]}>
+            style={[{top: 40, height: '100%', width: '100%'}]}>
             <WebView
-              source={{uri: 'https://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&view=Agenda'}}
+              source={{uri: 'https://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA'}}
               style={{height: Dimensions.get('window').height}}
               />
           </View>
@@ -126,13 +126,21 @@ export default class MainNavigator extends Component<Props> {
           <View
             style={[{height: '100%', width: '100%'}]}>
             <WebView
-              source={{uri: 'https://oslcarcadia.com/#groups'}}
+              source={{uri: 'http://www.groups.oslcarcadia.com/index.php'}}
               style={{height: Dimensions.get('window').height}}
               />
           </View>},
 
         {name: 'donate',
-        view: <Text>donateView</Text>},
+        view: 
+          <View
+            style={[{top: 50, height: '100%', width: '100%'}]}>
+            <WebView
+              source={{uri: 'http://www.donate.oslcarcadia.com/index.php'}}
+              style={{height: Dimensions.get('window').height}}
+              />
+          </View>
+        },
 
         {name: 'prayer',
         view: <Text>PR</Text>},
@@ -156,6 +164,12 @@ export default class MainNavigator extends Component<Props> {
         
         </TouchableOpacity>
         </View>;
+
+    if(this.state.current_index == 0){
+
+      menu = null;
+    }
+
 
 
     let dev = null;
