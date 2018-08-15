@@ -1,6 +1,27 @@
 TODO:
+
+webview 
+	backbutton to back
+
+bulletin
+	horizontal view
+
+about page
+	contact
+	beliefs
+
+service times
+
+map page
+
+groups screen
+>	make header part of index.php
+>	add header to bootstrap app
+>	add header to reactnative app
+
+2018/08/12
 >	full view of bulletin
-	change sermon-app bulletin to download only
+>	change sermon-app bulletin to download only
 >	remove bulletinAPI
 
 dev info 

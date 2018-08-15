@@ -9,7 +9,9 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Dimensions,
+  Alert,
 } from 'react-native';
 
 
@@ -23,6 +25,8 @@ export default class App extends Component<Props> {
     super(props);
     this.state = {
       dateString: '20180722',
+      width: 0,
+      height: 0,
     }
   }
 
@@ -39,6 +43,16 @@ export default class App extends Component<Props> {
     day = d.getDate();
     if(day < 10){day = "0" + day;}
     this.setState({dateString: ''+year+''+month+day}); 
+
+    this.checkDimensionValues();
+  }
+
+  checkDimensionValues = () => {
+
+    this.setState({
+          width: Dimensions.get('window').width,
+          height: Dimensions.get('window').height,
+        });
   }
 
   render() {
@@ -53,7 +67,9 @@ export default class App extends Component<Props> {
 
     return (
      
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, width: this.state.width, height: this.state.height}}
+        onLayout={this.checkDimensionValues}
+      >
       {dev}
        <Pdf
         source={source}
@@ -66,7 +82,10 @@ export default class App extends Component<Props> {
         onError={(error)=>{
             console.log(error);
         }}
-        style={styles.pdf}/>
+        style={{
+          flex:1
+        }}
+        />
       </View>
     );
   }

@@ -3,7 +3,6 @@ package com.oslc_rn_full;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.taessina.paypal.RNPaypalWrapperPackage;
 import org.wonday.pdf.RCTPdfView;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.facebook.react.ReactNativeHost;
@@ -26,7 +25,6 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNPaypalWrapperPackage(),
             new RCTPdfView(),
             new RNFetchBlobPackage()
       );

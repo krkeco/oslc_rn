@@ -14,6 +14,7 @@ import {
   ScrollView,
   View,
   WebView,
+  Image,
 } from 'react-native';
 
 import styles from './styles.js';
@@ -31,8 +32,6 @@ import Hyperlink from 'react-native-hyperlink';
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
-//not implemented yet
-import PayPal from 'react-native-paypal-wrapper';
 
 
 type Props = {};
@@ -77,8 +76,29 @@ export default class MainNavigator extends Component<Props> {
     this.setState({current_index: index});
 
   }
+  onNavigationStateChange(navState) {
+    this.setState({
+      canGoBack: navState.canGoBack
+    });
+  }
+  onBack() {
+    this.refs['WEBVIEW_REF'].goBack();
+  }
 
   render() {
+
+    let webView =  null;
+
+    //       <View
+    //         style={[{height: '100%', width: '100%'}]}>
+    // <WebView
+    //   ref='WEBVIEW_REF'
+    //   onNavigationStateChange=
+    //   {this.onNavigationStateChange.bind(this)}
+    //   style={{height: Dimensions.get('window').height}}
+    //   source={{uri: 'http://www.donate.oslcarcadia.com/paypal.php'}}
+    //   />
+    //   </View>;
 
     let nav =  [
              
@@ -100,6 +120,7 @@ export default class MainNavigator extends Component<Props> {
           <View
             style={[{height: '100%', width: '100%'}]}>
             <WebView
+              ref='WEBVIEW_REF'
               source={{uri: 'https://sermons.oslcarcadia.com'}}
               style={{height: Dimensions.get('window').height}}
               />
@@ -113,6 +134,7 @@ export default class MainNavigator extends Component<Props> {
           <View
             style={[{top: 40, height: '100%', width: '100%'}]}>
             <WebView
+              ref='WEBVIEW_REF'
               source={{uri: 'https://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA'}}
               style={{height: Dimensions.get('window').height}}
               />
@@ -125,7 +147,16 @@ export default class MainNavigator extends Component<Props> {
         view: 
           <View
             style={[{height: '100%', width: '100%'}]}>
+            <View
+              style={styles.header}>
+              <Text style={styles.title}>Church Groups</Text>
+                <Image
+                  style={styles.appLogo}
+                  source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
+              
+            </View>
             <WebView
+              ref='WEBVIEW_REF'
               source={{uri: 'http://www.groups.oslcarcadia.com/index.php'}}
               style={{height: Dimensions.get('window').height}}
               />
@@ -136,7 +167,8 @@ export default class MainNavigator extends Component<Props> {
           <View
             style={[{top: 50, height: '100%', width: '100%'}]}>
             <WebView
-              source={{uri: 'http://www.donate.oslcarcadia.com/index.php'}}
+              ref='WEBVIEW_REF'
+              source={{uri: 'http://www.donate.oslcarcadia.com/paypal.php'}}
               style={{height: Dimensions.get('window').height}}
               />
           </View>
@@ -168,6 +200,17 @@ export default class MainNavigator extends Component<Props> {
     if(this.state.current_index == 0){
 
       menu = null;
+    }
+    if(this.state.canGoBack){
+      menu = <View
+        style={{position: 'absolute', top: 20, left: 10}}>
+        <TouchableOpacity
+          disabled={!this.state.canGoBack}
+          onPress={this.onBack.bind(this)}
+          >
+          <Text style={styles.topbarText}>Go Back</Text>
+        </TouchableOpacity>
+      </View>;
     }
 
 
@@ -203,8 +246,7 @@ export default class MainNavigator extends Component<Props> {
 
     return (
       <View style={styles.container}>
-
-
+        {webView}
         {content}
 
 

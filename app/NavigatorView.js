@@ -4,7 +4,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   Text,
-  View
+  View,
+  WebView,
 } from 'react-native';
 
 import styles from './styles.js';
@@ -60,11 +61,11 @@ export default class NavigatorView extends Component<Props> {
           </Text>
         </Hyperlink>
 
-         <TouchableOpacity
-        onPress={this.props.isDonate}>
-        <Text style={styles.normal_text}>Donate</Text>
+        <TouchableOpacity
+          onPress={this.props.isDonate}>
+          <Text style={styles.normal_text}>Donate</Text>
         </TouchableOpacity>
-
+        
       </View>
     );
   }
