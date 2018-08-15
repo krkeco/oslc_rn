@@ -18,8 +18,14 @@ export default StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  small_text: {
+    fontSize: 15,
+  },
   normal_text: {
     fontSize: 25,
+  },
+  large_text: {
+    fontSize: 35,
   },
   pdf: {
       flex:1,

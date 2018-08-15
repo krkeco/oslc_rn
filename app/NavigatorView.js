@@ -55,7 +55,7 @@ export default class NavigatorView extends Component<Props> {
         <Text style={styles.normal_text}>Groups</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => Communications.email(['requests@prayers.oslcarcadia.com'],null,null,'Prayer Request from Mobile App','Dear OSLC Prayer Team, \n\n')}>      
+        <TouchableOpacity onPress={() => Communications.email(['requests@prayers.oslcarcadia.com'],null,null,'Prayer Request from Mobile App','Dear OSLC Prayer Team, \n\n\n')}>      
           <Text style={styles.normal_text}>Prayer Request</Text>
         </TouchableOpacity>
 
