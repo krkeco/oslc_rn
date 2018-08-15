@@ -110,6 +110,7 @@ export default class MainNavigator extends Component<Props> {
                 isGroups={() => {this.navigate(4);}}
                 isDonate={() => {this.navigate(5);}}
                 isPrayer={() => {this.navigate(6);}}//not used
+                isAbout={() => {this.navigate(7);}}
                 />}, 
         
         {name: 'bulletin',
@@ -176,6 +177,9 @@ export default class MainNavigator extends Component<Props> {
 
         {name: 'prayer',
         view: <Text>PR</Text>},
+
+        {name: 'about',
+        view: <Text>About us:</Text>},
     
       ];
 

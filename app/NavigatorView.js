@@ -61,6 +61,13 @@ export default class NavigatorView extends Component<Props> {
           </Text>
         </Hyperlink>
 
+
+        <TouchableOpacity
+        onPress={this.props.isAbout}>
+        <Text style={styles.normal_text}>About</Text>
+        </TouchableOpacity>
+
+
         <TouchableOpacity
           onPress={this.props.isDonate}>
           <Text style={styles.normal_text}>Donate</Text>
