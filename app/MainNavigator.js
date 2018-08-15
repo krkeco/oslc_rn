@@ -20,6 +20,8 @@ import {
 import styles from './styles.js';
 import Bulletin from './Bulletin.js';
 
+import About from './VIEW/About.js';
+
 import SermonsAPI from './API/Sermons.js';
 import SermonsView from './VIEW/Sermons.js';
 
@@ -179,7 +181,7 @@ export default class MainNavigator extends Component<Props> {
         view: <Text>PR</Text>},
 
         {name: 'about',
-        view: <Text>About us:</Text>},
+        view: <About/>},
     
       ];
 

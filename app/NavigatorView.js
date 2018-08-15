@@ -11,7 +11,10 @@ import {
 import styles from './styles.js';
 
 
-import Hyperlink from 'react-native-hyperlink'
+import Hyperlink from 'react-native-hyperlink';
+
+import Communications from 'react-native-communications';
+
 
 type Props = {};
 export default class NavigatorView extends Component<Props> {
@@ -52,14 +55,9 @@ export default class NavigatorView extends Component<Props> {
         <Text style={styles.normal_text}>Groups</Text>
         </TouchableOpacity>
 
-        <Hyperlink 
-          linkDefault={ true } 
-          linkText='Prayer Request'>
-
-          <Text  style={styles.normal_text}>
-            requests@prayers.oslcarcadia.com
-          </Text>
-        </Hyperlink>
+        <TouchableOpacity onPress={() => Communications.email(['requests@prayers.oslcarcadia.com'],null,null,'Prayer Request from Mobile App','Dear OSLC Prayer Team, \n\n')}>      
+          <Text style={styles.normal_text}>Prayer Request</Text>
+        </TouchableOpacity>
 
 
         <TouchableOpacity
