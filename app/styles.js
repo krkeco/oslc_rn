@@ -8,6 +8,9 @@ export default StyleSheet.create({
     backgroundColor: '#F5FCFF',
 
   },
+  hyperlink: {
+    color: 'orange'
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
@@ -25,7 +28,10 @@ export default StyleSheet.create({
     fontSize: 25,
   },
   large_text: {
-    fontSize: 35,
+    fontSize: 30,
+  },
+  text_underline: {
+    textDecorationLine: 'underline',
   },
   pdf: {
       flex:1,

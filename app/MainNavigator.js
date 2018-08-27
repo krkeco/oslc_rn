@@ -21,6 +21,7 @@ import styles from './styles.js';
 import Bulletin from './Bulletin.js';
 
 import About from './VIEW/About.js';
+import Office from './VIEW/Office.js';
 
 import SermonsAPI from './API/Sermons.js';
 import SermonsView from './VIEW/Sermons.js';
@@ -113,6 +114,8 @@ export default class MainNavigator extends Component<Props> {
                 isDonate={() => {this.navigate(5);}}
                 isPrayer={() => {this.navigate(6);}}//not used
                 isAbout={() => {this.navigate(7);}}
+                isOffice={() => {this.navigate(8);}}
+                isStaff={() => {this.navigate(9);}}
                 />}, 
         
         {name: 'bulletin',
@@ -182,6 +185,21 @@ export default class MainNavigator extends Component<Props> {
 
         {name: 'about',
         view: <About/>},
+        
+        {name: 'office',
+        view: <Office/>},
+
+        {name: 'staff',
+        view:  
+          <View
+            style={[{height: '100%', width: '100%'}]}>
+            <WebView
+              ref='WEBVIEW_REF'
+              source={{uri: 'https://contact.oslcarcadia.com'}}
+              style={{height: Dimensions.get('window').height}}
+              />
+          </View>
+              },
     
       ];
 

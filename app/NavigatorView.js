@@ -59,10 +59,19 @@ export default class NavigatorView extends Component<Props> {
           <Text style={styles.normal_text}>Prayer Request</Text>
         </TouchableOpacity>
 
-
         <TouchableOpacity
         onPress={this.props.isAbout}>
         <Text style={styles.normal_text}>About</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        onPress={this.props.isStaff}>
+        <Text style={styles.normal_text}>Staff</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        onPress={this.props.isOffice}>
+        <Text style={styles.normal_text}>Office Info</Text>
         </TouchableOpacity>
 
 
