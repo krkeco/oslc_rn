@@ -74,11 +74,10 @@ export default class NavigatorView extends Component<Props> {
         <Text style={styles.normal_text}>Office Info</Text>
         </TouchableOpacity>
 
-
-        <TouchableOpacity
-          onPress={this.props.isDonate}>
-          <Text style={styles.normal_text}>Donate</Text>
-        </TouchableOpacity>
+        <TouchableOpacity onPress={() => Communications.web('https://www.donate.oslcarcadia.com')}>
+          <Text style={[styles.normal_text,styles.hyperlink]}>Donate</Text>
+        </TouchableOpacity> 
+        
         
       </View>
     );
