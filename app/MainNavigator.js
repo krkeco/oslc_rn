@@ -216,7 +216,9 @@ export default class MainNavigator extends Component<Props> {
         <TouchableOpacity
           onPress={() => {this.navigate(0);}}>
         
-          <Text style={{ fontSize: 28, fontFamily: 'fontawesome-webfont'}}>{Icons.chevronLeft}</Text>
+
+
+          <Text style={{ fontSize: 28, fontFamily: 'FontAwesome'}}>{Icons.chevronLeft}</Text>
         
         </TouchableOpacity>
         </View>;
