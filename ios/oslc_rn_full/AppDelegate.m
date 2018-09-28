@@ -17,15 +17,6 @@
 {
   NSURL *jsCodeLocation;
   
-  for (NSString* family in [UIFont familyNames])
-  {
-    NSLog(@"%@", family);
-    for (NSString* name in [UIFont fontNamesForFamilyName: family])
-    {
-      NSLog(@" %@", name);
-    }
-  }
-  
 #ifdef DEBUG
   jsCodeLocation = [NSURL URLWithString:@"http://192.168.43.109:8081/index.bundle?platform=ios&dev=true"];
 #else
