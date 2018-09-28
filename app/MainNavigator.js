@@ -137,7 +137,7 @@ export default class MainNavigator extends Component<Props> {
             style={[{height: '100%', width: '100%'}]}>
             <WebView
               ref='WEBVIEW_REF'
-              source={{uri: 'http://sermons.oslcarcadia.com'}}
+              source={{uri: 'https://sermons.oslcarcadia.com'}}
               style={{height: Dimensions.get('window').height}}
               />
           </View>
@@ -151,7 +151,7 @@ export default class MainNavigator extends Component<Props> {
             style={[{top: 40, height: '100%', width: '100%'}]}>
             <WebView
               ref='WEBVIEW_REF'
-              source={{uri: 'http://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA'}}
+              source={{uri: 'https://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA'}}
               style={{height: Dimensions.get('window').height}}
               />
           </View>
@@ -168,12 +168,12 @@ export default class MainNavigator extends Component<Props> {
               <Text style={styles.title}>Church Groups</Text>
                 <Image
                   style={styles.appLogo}
-                  source={{uri: 'http://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
+                  source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
             </View>
 
             <WebView
               ref='WEBVIEW_REF'
-              source={{uri: 'http://www.groups.oslcarcadia.com/index.php'}}
+              source={{uri: 'https://www.groups.oslcarcadia.com/index.php'}}
               style={{height: Dimensions.get('window').height}}
               />
           </View>},
@@ -184,7 +184,7 @@ export default class MainNavigator extends Component<Props> {
             style={[{top: 50, height: '100%', width: '100%'}]}>
             <WebView
               ref='WEBVIEW_REF'
-              source={{uri: 'http://www.donate.oslcarcadia.com/paypal.php'}}
+              source={{uri: 'https://www.donate.oslcarcadia.com/paypal.php'}}
               style={{height: Dimensions.get('window').height}}
               />
           </View>
@@ -208,12 +208,12 @@ export default class MainNavigator extends Component<Props> {
               <Text style={styles.title}>Church Staff</Text>
                 <Image
                   style={styles.appLogo}
-                  source={{uri: 'http://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
+                  source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
             </View>
             
             <WebView
               ref='WEBVIEW_REF'
-              source={{uri: 'http://contact.oslcarcadia.com'}}
+              source={{uri: 'https://contact.oslcarcadia.com'}}
               style={{height: Dimensions.get('window').height}}
               />
           </View>
