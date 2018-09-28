@@ -3,10 +3,53 @@ import { StyleSheet, Dimensions } from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
 
+  },
+  app: {
+    fontFamily: 'futura_medium_bt'
+
+  },
+
+  navContainer: {
+    flex: 1, 
+    justifyContent: 'space-evenly',
+  },
+
+  officeHyperlink: {
+    flex: 1,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  },
+
+  navDuets: {
+
+
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'space-evenly',
+
+  },
+  navBox:{
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#626F82',
+
+    flex: 1,
+    justifyContent: 'center',
+  },
+  navFontA: {
+   fontSize: 45,
+   fontFamily: 'FontAwesome', 
+   textAlign: 'center',
+  },
+  navFont: {
+    fontFamily: 'futura_medium_bt',
+    textAlign: 'center',
+    fontSize: 20,
   },
   hyperlink: {
     color: 'orange'
@@ -18,7 +61,7 @@ export default StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: '#626F82',
     marginBottom: 5,
   },
   small_text: {
@@ -51,7 +94,7 @@ export default StyleSheet.create({
     marginLeft: 20,
     marginTop: -5,
     fontSize: 28,
-    color: '#828FA2',
+    color: '#626F82',
     textAlign: 'center',
   },
 

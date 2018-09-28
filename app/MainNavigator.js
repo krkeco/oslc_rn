@@ -9,6 +9,7 @@ import {
   Platform,
   StyleSheet,
   TouchableOpacity,
+  BackHandler,
   Text,
   Dimensions,
   ScrollView,
@@ -70,8 +71,17 @@ export default class MainNavigator extends Component<Props> {
     };
   }
 
-  componentWillMount(){
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+  }
 
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  handleBackPress = () => {
+    this.navigate(0);
+    return true;
   }
 
   navigate = (index) => {
@@ -159,8 +169,8 @@ export default class MainNavigator extends Component<Props> {
                 <Image
                   style={styles.appLogo}
                   source={{uri: 'http://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
-              
             </View>
+
             <WebView
               ref='WEBVIEW_REF'
               source={{uri: 'http://www.groups.oslcarcadia.com/index.php'}}
@@ -193,6 +203,14 @@ export default class MainNavigator extends Component<Props> {
         view:  
           <View
             style={[{height: '100%', width: '100%'}]}>
+             <View
+              style={styles.header}>
+              <Text style={styles.title}>Church Staff</Text>
+                <Image
+                  style={styles.appLogo}
+                  source={{uri: 'http://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
+            </View>
+            
             <WebView
               ref='WEBVIEW_REF'
               source={{uri: 'http://contact.oslcarcadia.com'}}
@@ -271,7 +289,7 @@ export default class MainNavigator extends Component<Props> {
         // </View>
 
     return (
-      <View style={styles.container}>
+      <View style={[styles.container,styles.app]}>
         {webView}
         {content}
 
