@@ -15,6 +15,8 @@ import Hyperlink from 'react-native-hyperlink';
 
 import Communications from 'react-native-communications';
 
+import FontAwesome, { Icons } from 'react-native-fontawesome';
+
 
 type Props = {};
 export default class NavigatorView extends Component<Props> {
@@ -33,53 +35,84 @@ export default class NavigatorView extends Component<Props> {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.navContainer}>
 
-        <TouchableOpacity
-        onPress={this.props.isBulletin}>
-        <Text style={styles.normal_text}>Bulletin</Text>
-        </TouchableOpacity>
+        <View style={styles.navDuets}>
 
-         <TouchableOpacity
-        onPress={this.props.isCalendar}>
-        <Text style={styles.normal_text}>Calendar</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+          style={styles.navBox}
+          onPress={this.props.isBulletin}>
+          <Text style={styles.navFontA}>{Icons.fileTextO}</Text>
+          <Text style={styles.navFont}>Bulletin</Text>
+          </TouchableOpacity>
 
-         <TouchableOpacity
-        onPress={this.props.isRecording}>
-        <Text style={styles.normal_text}>Sermons</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity
-        onPress={this.props.isGroups}>
-        <Text style={styles.normal_text}>Groups</Text>
-        </TouchableOpacity>
+           <TouchableOpacity
+           style={styles.navBox}
+          onPress={this.props.isCalendar}>
+            <Text style={styles.navFontA}>{Icons.calendar}</Text>
+          <Text style={styles.navFont}>Calendar</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => Communications.email(['requests@prayers.oslcarcadia.com'],null,null,'Prayer Request from Mobile App','Dear OSLC Prayer Team, \n\n\n')}>      
-          <Text style={styles.normal_text}>Prayer Request</Text>
-        </TouchableOpacity>
+           <TouchableOpacity
+           style={styles.navBox}
+          onPress={this.props.isRecording}>
+          <Text style={styles.navFontA}>{Icons.headphones}</Text>
+          <Text style={styles.navFont}>Archive</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-        onPress={this.props.isAbout}>
-        <Text style={styles.normal_text}>About</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity
-        onPress={this.props.isStaff}>
-        <Text style={styles.normal_text}>Staff</Text>
-        </TouchableOpacity>
+        </View>
+        <View style={styles.navDuets}>
 
-        <TouchableOpacity
-        onPress={this.props.isOffice}>
-        <Text style={styles.normal_text}>Office Info</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+          style={styles.navBox}
+          onPress={this.props.isGroups}>
+          <Text style={styles.navFontA}>{Icons.shareSquare}</Text>
+          <Text style={styles.navFont}>Groups</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => Communications.web('https://www.donate.oslcarcadia.com')}>
-          <Text style={[styles.normal_text,styles.hyperlink]}>Donate</Text>
-        </TouchableOpacity> 
-        
-        
+          <TouchableOpacity
+          style={styles.navBox} onPress={() => Communications.email(['requests@prayers.oslcarcadia.com'],null,null,'Prayer Request from Mobile App','Dear OSLC Prayer Team, \n\n\n')}> 
+          <Text style={[styles.navFontA,{color: 'red'}]}>{Icons.heart}</Text>     
+            <Text style={styles.navFont}>Prayer Request</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+          style={styles.navBox}
+          onPress={this.props.isAbout}>
+          <Text style={styles.navFontA}>{Icons.book}</Text>
+          <Text style={styles.navFont}>Beliefs</Text>
+          </TouchableOpacity>
+
+
+        </View>
+        <View style={styles.navDuets}>
+
+          <TouchableOpacity
+          style={styles.navBox}
+          onPress={this.props.isStaff}>
+          <Text style={styles.navFontA}>{Icons.users}</Text>
+          <Text style={styles.navFont}>Staff</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+          style={styles.navBox}
+          onPress={this.props.isOffice}>
+          <Text style={styles.navFontA}>{Icons.info}</Text>
+          <Text style={styles.navFont}>Church Info</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+          style={styles.navBox} onPress={() => Communications.web('https://www.donate.oslcarcadia.com')}>
+          <Text style={styles.navFontA}>{Icons.paypal}</Text>
+            <Text style={[styles.navFont]}>Donate</Text>
+          </TouchableOpacity> 
+
+        </View>
+          
       </View>
+
     );
   }
 }

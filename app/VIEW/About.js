@@ -40,7 +40,7 @@ export default class About extends Component<Props> {
       style={[{height: '100%', width: '100%'}]}>
       <View
         style={styles.header}>
-        <Text style={styles.title}>About Us</Text>
+        <Text style={styles.title}>Beliefs</Text>
           <Image
             style={styles.appLogo}
             source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
@@ -53,18 +53,6 @@ export default class About extends Component<Props> {
             style={{width: 200, height: 200}}
 
             source={require('../IMG/luther-rose.jpg')}/>
-
-        <Text style={[styles.large_text,styles.text_underline]}>Services:</Text> 
-        <Text style={styles.normal_text}>Sunday:</Text> 
-        <Text> 8:00AM Liturgical Service</Text> 
-        <Text> 9:30AM Sunday School Classes for all ages</Text> 
-        <Text> 10:45AM Liturgical Service</Text> 
-        <Text> 6:30PM Praise Service </Text> 
-
-        <Text style={styles.normal_text}>Monday:</Text> 
-        <Text> 6:30PM Abbreviated Service</Text> 
-
-        <Text style={[styles.large_text,styles.text_underline]}>Beliefs:</Text> 
 
         <Text style={[styles.small_text,{textAlign: 'center'}]}>
 
