@@ -40,7 +40,7 @@ export default class About extends Component<Props> {
       style={[{height: '100%', width: '100%'}]}>
       <View
         style={styles.header}>
-        <Text style={styles.title}>Beliefs</Text>
+        <Text style={styles.title}>BELIEFS</Text>
           <Image
             style={styles.appLogo}
             source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
@@ -54,7 +54,7 @@ export default class About extends Component<Props> {
 
             source={require('../IMG/luther-rose.jpg')}/>
 
-        <Text style={[styles.small_text,{textAlign: 'center'}]}>
+        <Text style={[styles.small_text,{textAlign: 'center', margin: 20}]}>
 
         Our Savior Lutheran Church is part of the Lutheran Church Missouri Synod. 
 
@@ -62,7 +62,11 @@ export default class About extends Component<Props> {
         A more comprehensive explanation of our beliefs can be found
         </Text> 
         <TouchableOpacity onPress={() => Communications.web('https://www.lcms.org/about/beliefs/doctrine')}>
-          <Text style={[styles.small_text,styles.hyperlink]}>here</Text>
+          <Text style={[styles.normal_text,styles.hyperlink]}>
+            HERE
+            {'\n'}
+            {'\n'} 
+          </Text>
         </TouchableOpacity> 
         
 

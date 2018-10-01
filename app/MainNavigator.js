@@ -230,13 +230,13 @@ export default class MainNavigator extends Component<Props> {
     let menu =
 
         <View
-        style={{position: 'absolute', top: 20, left: 10}}>
+        style={{position: 'absolute', top: 15, left: 15}}>
         <TouchableOpacity
           onPress={() => {this.navigate(0);}}>
         
 
 
-          <Text style={{ fontSize: 28, fontFamily: 'FontAwesome'}}>{Icons.chevronLeft}</Text>
+          <Text style={{ fontSize: 32, fontFamily: 'FontAwesome'}}>{Icons.chevronLeft}</Text>
         
         </TouchableOpacity>
         </View>;
@@ -261,20 +261,20 @@ export default class MainNavigator extends Component<Props> {
 
     let dev = null;
 
-    if(__DEV__){
-        dev = <Text style={{position: 'absolute', bottom: 0}}>calendar: waiting</Text>;
-        if(this.state.calendar != null
-          && this.state.calendar != undefined){
-          dev =
-          <View
-            style={{height: '0%', position: 'absolute', top: 0, right:0}}>
-           <Text>calendar: {this.state.calendar.summary}</Text>
-           <Text>calendar: {this.state.calendar.items[0].start.dateTime}</Text>
+    // if(__DEV__){
+    //     dev = <Text style={{position: 'absolute', bottom: 0}}>calendar: waiting</Text>;
+    //     if(this.state.calendar != null
+    //       && this.state.calendar != undefined){
+    //       dev =
+    //       <View
+    //         style={{height: '0%', position: 'absolute', top: 0, right:0}}>
+    //        <Text>calendar: {this.state.calendar.summary}</Text>
+    //        <Text>calendar: {this.state.calendar.items[0].start.dateTime}</Text>
     
-          </View>;
+    //       </View>;
     
-        }
-    }
+    //     }
+    // }
      
         // <CalendarAPI
         //   setCalendar={(calendarApi) => {
@@ -289,7 +289,7 @@ export default class MainNavigator extends Component<Props> {
         // </View>
 
     return (
-      <View style={[styles.container,styles.app]}>
+      <View style={[styles.container]}>
         {webView}
         {content}
 
