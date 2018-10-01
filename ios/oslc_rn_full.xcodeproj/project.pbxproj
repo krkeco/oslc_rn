@@ -38,7 +38,7 @@
 		3E2F05F7213C7CD50032D07E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E2F05F6213C7CD50032D07E /* FontAwesome.ttf */; };
 		3E2F05F9213C8F490032D07E /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E2F05F8213C8F490032D07E /* fontawesome-webfont.ttf */; };
 		3E3D99E0215E7FC600C310E2 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E3D99DC215E7FC500C310E2 /* Raleway-Thin.ttf */; };
-		3E3D99E1215E7FC600C310E2 /* futura medium bt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E3D99DD215E7FC600C310E2 /* futura medium bt.ttf */; };
+		3E3D99E1215E7FC600C310E2 /* Futura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E3D99DD215E7FC600C310E2 /* Futura.ttf */; };
 		3E3D99E2215E7FC600C310E2 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E3D99DE215E7FC600C310E2 /* Raleway-Regular.ttf */; };
 		3E3D99E3215E7FC600C310E2 /* futura_medium_bt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E3D99DF215E7FC600C310E2 /* futura_medium_bt.ttf */; };
 		3E828D88213F055000F4651E /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
@@ -380,7 +380,7 @@
 		3E2F05F6213C7CD50032D07E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		3E2F05F8213C8F490032D07E /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		3E3D99DC215E7FC500C310E2 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
-		3E3D99DD215E7FC600C310E2 /* futura medium bt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "futura medium bt.ttf"; sourceTree = "<group>"; };
+		3E3D99DD215E7FC600C310E2 /* Futura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Futura.ttf; sourceTree = "<group>"; };
 		3E3D99DE215E7FC600C310E2 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		3E3D99DF215E7FC600C310E2 /* futura_medium_bt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futura_medium_bt.ttf; sourceTree = "<group>"; };
 		51FF78EEA3F54A4FB386FCC5 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -666,7 +666,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				3E3D99DD215E7FC600C310E2 /* futura medium bt.ttf */,
+				3E3D99DD215E7FC600C310E2 /* Futura.ttf */,
 				3E3D99DF215E7FC600C310E2 /* futura_medium_bt.ttf */,
 				3E3D99DE215E7FC600C310E2 /* Raleway-Regular.ttf */,
 				3E3D99DC215E7FC500C310E2 /* Raleway-Thin.ttf */,
@@ -1192,7 +1192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E3D99E1215E7FC600C310E2 /* futura medium bt.ttf in Resources */,
+				3E3D99E1215E7FC600C310E2 /* Futura.ttf in Resources */,
 				3E3D99E0215E7FC600C310E2 /* Raleway-Thin.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E3D99E2215E7FC600C310E2 /* Raleway-Regular.ttf in Resources */,

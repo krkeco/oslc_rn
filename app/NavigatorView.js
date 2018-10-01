@@ -58,7 +58,7 @@ export default class NavigatorView extends Component<Props> {
            style={styles.navBox}
           onPress={this.props.isRecording}>
           <Text style={styles.navFontA}>{Icons.headphones}</Text>
-          <Text style={styles.navFont}>Archive</Text>
+          <Text style={[styles.navFont]}>Archive</Text>
           </TouchableOpacity>
 
 

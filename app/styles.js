@@ -7,7 +7,7 @@ export default StyleSheet.create({
 
   },
   app: {
-    fontFamily: 'futura_medium_bt'
+    fontFamily: 'Futura',
 
   },
 
@@ -47,7 +47,7 @@ export default StyleSheet.create({
    textAlign: 'center',
   },
   navFont: {
-    fontFamily: 'futura_medium_bt',
+    fontFamily: 'Futura',
     textAlign: 'center',
     fontSize: 20,
   },

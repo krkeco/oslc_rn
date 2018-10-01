@@ -23,7 +23,14 @@
   jsCodeLocation = [CodePush bundleURL];
 #endif
   
-  
+  for (NSString* family in [UIFont familyNames])
+  {
+    NSLog(@"%@", family);
+    for (NSString* name in [UIFont fontNamesForFamilyName: family])
+    {
+      NSLog (@" %@", name);
+    }
+  }
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"oslc_rn_full"

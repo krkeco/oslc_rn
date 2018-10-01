@@ -66,17 +66,17 @@ export default class Office extends Component<Props> {
         <Text style={[styles.large_text,styles.text_underline]}>Contact Info:</Text> 
         
           <TouchableOpacity style={styles.officeHyperlink} onPress={() => Communications.web('https://www.google.com/maps/place/Our+Savior+Lutheran+Church/@34.126288,-118.0525331,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2dbb08211387d:0xc1ddefee13bf4039!8m2!3d34.126288!4d-118.0503391')}>
-            <Text style={{textAlign: 'center', fontSize: 25,marginTop:5, fontFamily: 'fontawesome-webfont'}}>{Icons.map}</Text>
+            <Text style={{textAlign: 'center', fontSize: 25,marginTop:5, fontFamily: 'FontAwesome'}}>{Icons.map}</Text>
             <Text style={[styles.normal_text,{textAlign: 'center'}]}> 512 W Duarte Rd., Arcadia, CA 91007</Text> 
           </TouchableOpacity> 
         
           <TouchableOpacity style={styles.officeHyperlink} onPress={() => Communications.email(['oslcarcadia@aol.com'],null,null,'OSLCArcadia email from Mobile','Hi OSLC, \n\n\n')}>      
-          <Text style={{textAlign: 'center', fontSize: 25,marginTop:5, fontFamily: 'fontawesome-webfont'}}>{Icons.envelope}</Text>
+          <Text style={{textAlign: 'center', fontSize: 25,marginTop:5, fontFamily: 'FontAwesome'}}>{Icons.envelope}</Text>
             <Text style={[styles.normal_text]}> OSLCArcadia@aol.com</Text>
           </TouchableOpacity>
           
           <TouchableOpacity style={styles.officeHyperlink} onPress={() => Communications.phonecall('6264477690', true)}>
-          <Text style={{textAlign: 'center', fontSize: 25,marginTop:5, fontFamily: 'fontawesome-webfont'}}>{Icons.phone}</Text>
+          <Text style={{textAlign: 'center', fontSize: 25,marginTop:5, fontFamily: 'FontAwesome'}}>{Icons.phone}</Text>
             <Text style={[styles.normal_text]}> 626-447-7690</Text>      
           </TouchableOpacity>
 
