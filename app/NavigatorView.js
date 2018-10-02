@@ -74,7 +74,7 @@ export default class NavigatorView extends Component<Props> {
 
           <TouchableOpacity
           style={styles.navBox} onPress={() => Communications.email(['requests@prayers.oslcarcadia.com'],null,null,'Prayer Request from Mobile App','Dear OSLC Prayer Team, \n\n\n')}> 
-          <Text style={[styles.navFontA,{color: 'red'}]}>{Icons.heart}</Text>     
+          <Text style={[styles.navFontA,{color: '#d50055'}]}>{Icons.heart}</Text>     
             <Text style={styles.navFont}>Prayer{'\n'}Request</Text>
           </TouchableOpacity>
 

@@ -148,7 +148,16 @@ export default class MainNavigator extends Component<Props> {
         {name: 'calendar',
         view: 
           <View
-            style={[{top: 40, height: '100%', width: '100%'}]}>
+            style={[{height: '100%', width: '100%'}]}>
+            
+            <View
+              style={styles.header}>
+              <Text style={styles.title}>Calendar</Text>
+                <Image
+                  style={styles.appLogo}
+                  source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
+            </View>
+
             <WebView
               ref='WEBVIEW_REF'
               source={{uri: 'https://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA'}}
@@ -165,7 +174,7 @@ export default class MainNavigator extends Component<Props> {
             style={[{height: '100%', width: '100%'}]}>
             <View
               style={styles.header}>
-              <Text style={styles.title}>Church Groups</Text>
+              <Text style={[styles.title]}>Church Groups</Text>
                 <Image
                   style={styles.appLogo}
                   source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
@@ -174,7 +183,7 @@ export default class MainNavigator extends Component<Props> {
             <WebView
               ref='WEBVIEW_REF'
               source={{uri: 'https://www.groups.oslcarcadia.com/index.php'}}
-              style={{height: Dimensions.get('window').height}}
+              style={{marginTop: -60, zIndex: -10, height: Dimensions.get('window').height}}
               />
           </View>},
 
@@ -230,11 +239,9 @@ export default class MainNavigator extends Component<Props> {
     let menu =
 
         <View
-        style={{position: 'absolute', top: 15, left: 15}}>
+        style={{position: 'absolute', top: 20, left: 15}}>
         <TouchableOpacity
           onPress={() => {this.navigate(0);}}>
-        
-
 
           <Text style={{ fontSize: 32, fontFamily: 'FontAwesome'}}>{Icons.chevronLeft}</Text>
         
@@ -247,7 +254,7 @@ export default class MainNavigator extends Component<Props> {
     }
     if(this.state.canGoBack){
       menu = <View
-        style={{position: 'absolute', top: 20, left: 10}}>
+        style={{position: 'absolute', top: 20, left: 10, zIndex: 20}}>
         <TouchableOpacity
           disabled={!this.state.canGoBack}
           onPress={this.onBack.bind(this)}

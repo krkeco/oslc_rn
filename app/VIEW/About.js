@@ -59,6 +59,8 @@ export default class About extends Component<Props> {
         Our Savior Lutheran Church is part of the Lutheran Church Missouri Synod. 
 
         Our beliefs are firmly grounded in the doctrine of Grace, Faith, and Scripture. We believe that all are sinful, and it is only through the Grace of God that we are saved. This Grace is given through Faith in Jesus Christ, God’s son. Finally, that the Bible is the Holy infallible inspiration of God. 
+        {'\n'}
+        {'\n'}
         A more comprehensive explanation of our beliefs can be found
         </Text> 
         <TouchableOpacity onPress={() => Communications.web('https://www.lcms.org/about/beliefs/doctrine')}>

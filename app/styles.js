@@ -93,7 +93,7 @@ export default StyleSheet.create({
     height: 65,
     width: '100%',
     paddingTop: 20,
-
+    
     left: 0,
     top: 0,
   },
@@ -105,17 +105,22 @@ export default StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
+  backButton: {
+    position: 'absolute', 
+    top: 20,
+    left: 10, 
+  },
 
-appLogo: {
-  height: 50,
-  width: 50,
-  right: 10,
-  top: 5,
-  position: 'absolute',
-},
+  appLogo: {
+    height: 50,
+    width: 50,
+    right: 10,
+    top: 5,
+    position: 'absolute',
+  },
 
-appLogoContainer: {
-},
+  appLogoContainer: {
+  },
 
 
 });
