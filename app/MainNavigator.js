@@ -174,7 +174,7 @@ export default class MainNavigator extends Component<Props> {
             style={[{height: '100%', width: '100%'}]}>
             <View
               style={styles.header}>
-              <Text style={[styles.title]}>Church Groups</Text>
+              <Text style={[styles.title]}>Groups</Text>
                 <Image
                   style={styles.appLogo}
                   source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
@@ -214,7 +214,7 @@ export default class MainNavigator extends Component<Props> {
             style={[{height: '100%', width: '100%'}]}>
              <View
               style={styles.header}>
-              <Text style={styles.title}>Church Staff</Text>
+              <Text style={styles.title}>Staff</Text>
                 <Image
                   style={styles.appLogo}
                   source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
@@ -239,11 +239,11 @@ export default class MainNavigator extends Component<Props> {
     let menu =
 
         <View
-        style={{position: 'absolute', top: 20, left: 15}}>
+        style={{position: 'absolute', top: 12, left: 12}}>
         <TouchableOpacity
           onPress={() => {this.navigate(0);}}>
 
-          <Text style={{ fontSize: 32, fontFamily: 'FontAwesome'}}>{Icons.chevronLeft}</Text>
+          <Text style={{ fontSize: 32, padding: 4, width: 38, height: 38, fontFamily: 'FontAwesome'}}>{Icons.chevronLeft}</Text>
         
         </TouchableOpacity>
         </View>;
