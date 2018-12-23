@@ -53,7 +53,7 @@ export default class MainNavigator extends Component<Props> {
 
       
       //sermon series
-      series: [],
+      series: null,
       calendar: {
         summary: 'a summary',
         status: 'confirmed',
@@ -340,6 +340,28 @@ export default class MainNavigator extends Component<Props> {
         //     }}/>
         // </View>
 
+
+
+    // let series = <Text>no series from API </Text>;
+
+    // if(this.state.series != null
+    //   && this.state.series != undefined
+    //   && this.state.series.length > 0){
+    //   series = 
+    //   <View style={styles.container}>
+    //   {this.state.series.map((series,seriesIndex) => {
+        
+    //     return <View key={seriesIndex}>
+    //       <Text>{series.title}</Text>
+    //       {series.services.map((service,serviceIndex) =>{
+    //         return <Text key={serviceIndex}>{service.title}</Text>
+    //       })}
+    //     </View>
+    //   })
+    //   }
+    //   </View>;
+    // }
+
     return (
       <View style={[styles.container]}>
         {webView}
@@ -349,7 +371,8 @@ export default class MainNavigator extends Component<Props> {
           {dev}
         {menu}
         <SermonsAPI
-          setSeries={this.setSeries}/>
+          setSeries={(series) => {this.setSeries(series)}}/>
+         
       </View>
     );
   }

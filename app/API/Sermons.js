@@ -60,7 +60,7 @@ export default class Sermons extends Component<Props> {
         // );
 
         this.setState({series: seriesData.series});
-        this.props.setSeries(seriesData);
+        this.props.setSeries(seriesData.series);
                   
       
       } else {
