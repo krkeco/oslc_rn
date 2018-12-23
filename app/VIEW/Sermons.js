@@ -27,16 +27,21 @@ export default class Sermons extends Component<Props> {
 
   render() {
 
-    let series = <Text>no series {this.state.series.length}</Text>;
+    let series = null;
 
-    if(this.state.series != null
-      && this.state.series != undefined
-      && this.state.series.length > 0){
+    if(this.props.series != null
+      && this.props.series != undefined
+      && this.props.series.length > 0){
       series = 
       <View>
-      {this.state.series.map((series,index) => {
+      {this.props.series.map((series,index) => {
         
-        return <Text key={index}>{series.title}</Text>
+        return <View key={index}>
+          <Text>{series.title}</Text>
+          {series.services.map((service,index) =>{
+            return <Text>{service.title}</Text>
+          })}
+          </View>
       })
       }
       </View>;
@@ -44,8 +49,10 @@ export default class Sermons extends Component<Props> {
 
     return (
       <View style={styles.container}>
+      <Text>Sermon Recordings:</Text>
         {series}
       </View>
     );
   }
+
 }

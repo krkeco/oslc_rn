@@ -15,11 +15,15 @@ import {
   ScrollView,
   View,
   WebView,
+  Picker,
   Image,
 } from 'react-native';
 
 import styles from './styles.js';
-import Bulletin from './Bulletin.js';
+import Header from './COMPONENT/Header.js';
+
+import Bulletin from './VIEW/Bulletin.js';
+import ModernBulletin from './VIEW/ModernBulletin.js';
 
 import About from './VIEW/About.js';
 import Office from './VIEW/Office.js';
@@ -46,6 +50,7 @@ export default class MainNavigator extends Component<Props> {
     super(props);
     this.state = {
       pdf_text: 'no notes yet',
+
       
       //sermon series
       series: [],
@@ -64,6 +69,8 @@ export default class MainNavigator extends Component<Props> {
       },
 
       current_index: 0,
+      //for bulletin subviews
+      subpageIndex: 1,
       
      
       
@@ -77,6 +84,10 @@ export default class MainNavigator extends Component<Props> {
 
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  setSeries = (seriesData) => {
+    this.setState({series: seriesData});
   }
 
   handleBackPress = () => {
@@ -102,22 +113,36 @@ export default class MainNavigator extends Component<Props> {
 
     let webView =  null;
 
-    //       <View
-    //         style={[{height: '100%', width: '100%'}]}>
-    // <WebView
-    //   ref='WEBVIEW_REF'
-    //   onNavigationStateChange=
-    //   {this.onNavigationStateChange.bind(this)}
-    //   style={{height: Dimensions.get('window').height}}
-    //   source={{uri: 'http://www.donate.oslcarcadia.com/paypal.php'}}
-    //   />
-    //   </View>;
+    let bulletinTabs = 
+    <View style={{height: 65}}>
+     <View
+        style={[styles.header,{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}]}>
+
+          <Picker
+            style={styles.twoPickers} itemStyle={styles.twoPickerItems}
+            selectedValue={this.state.subpageIndex}
+            onValueChange={(itemValue) => {
+              this.setState({subpageIndex: itemValue})
+              this.navigate(itemValue);
+            }}
+          >
+            <Picker.Item label="Liturgical Bulletin" value={1} />
+            <Picker.Item label="Modern Worship" value={10} />
+            <Picker.Item label="Newsletter" value={11} />
+            
+          </Picker>
+          
+          <Image
+            style={styles.appLogo}
+            source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
+      </View>
+    </View>;
 
     let nav =  [
              
         {name: 'navigator',
         view: <NavigatorView
-                isBulletin={() => {this.navigate(1);}}
+                isBulletin={() => {this.navigate(this.state.subpageIndex);}}
                 isRecording={() => {this.navigate(2);}}
                 isCalendar={() => {this.navigate(3);}}
                 isGroups={() => {this.navigate(4);}}
@@ -126,23 +151,33 @@ export default class MainNavigator extends Component<Props> {
                 isAbout={() => {this.navigate(7);}}
                 isOffice={() => {this.navigate(8);}}
                 isStaff={() => {this.navigate(9);}}
+                //10 modern worship bulletin
+                //11 newsletter
                 />}, 
         
         {name: 'bulletin',
-        view: <Bulletin/>}, 
+        view: 
+         <View
+            style={[{height: '100%', width: '100%'}]}>
+            
+            {bulletinTabs}
+            
+            <Bulletin/>
+          </View>
+          }, 
 
         {name: 'recording',
         view:  
-          <View
-            style={[{height: '100%', width: '100%'}]}>
-            <WebView
-              ref='WEBVIEW_REF'
-              source={{uri: 'https://sermons.oslcarcadia.com'}}
-              style={{height: Dimensions.get('window').height}}
-              />
-          </View>
-        // <SermonsView
-        //         series = {this.state.series}/>
+          // <View
+          //   style={[{height: '100%', width: '100%'}]}>
+          //   <WebView
+          //     ref='WEBVIEW_REF'
+          //     source={{uri: 'https://sermons.oslcarcadia.com'}}
+          //     style={{height: Dimensions.get('window').height}}
+          //     />
+          // </View>
+        <SermonsView
+                series = {this.state.series}/>
               }, 
 
         {name: 'calendar',
@@ -150,13 +185,7 @@ export default class MainNavigator extends Component<Props> {
           <View
             style={[{height: '100%', width: '100%'}]}>
             
-            <View
-              style={styles.header}>
-              <Text style={styles.title}>Calendar</Text>
-                <Image
-                  style={styles.appLogo}
-                  source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
-            </View>
+          <Header title="Calendar"/>
 
             <WebView
               ref='WEBVIEW_REF'
@@ -172,13 +201,7 @@ export default class MainNavigator extends Component<Props> {
         view: 
           <View
             style={[{height: '100%', width: '100%'}]}>
-            <View
-              style={styles.header}>
-              <Text style={[styles.title]}>Groups</Text>
-                <Image
-                  style={styles.appLogo}
-                  source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
-            </View>
+           <Header title="Groups"/>
 
             <WebView
               ref='WEBVIEW_REF'
@@ -212,13 +235,8 @@ export default class MainNavigator extends Component<Props> {
         view:  
           <View
             style={[{height: '100%', width: '100%'}]}>
-             <View
-              style={styles.header}>
-              <Text style={styles.title}>Staff</Text>
-                <Image
-                  style={styles.appLogo}
-                  source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
-            </View>
+             
+             <Header title="Staff"/>
             
             <WebView
               ref='WEBVIEW_REF'
@@ -227,6 +245,33 @@ export default class MainNavigator extends Component<Props> {
               />
           </View>
               },
+
+
+        {name: 'modern bulletin',
+        view: 
+         <View
+            style={[{height: '100%', width: '100%'}]}>
+            {bulletinTabs}
+            <ModernBulletin/>
+          </View>
+        }, 
+
+
+        {name: 'newsletter',
+        view: 
+         <View
+            style={[{height: '100%', width: '100%'}]}>
+             <View
+              style={[{zIndex:3}]}>
+            {bulletinTabs}
+            </View>
+             <WebView
+              ref='WEBVIEW_REF'
+              source={{uri: 'https://announcements.oslcarcadia.com'}}
+              style={{height: Dimensions.get('window').height, marginTop: -85}}
+              />
+          </View>
+        }, 
     
       ];
 
@@ -239,7 +284,7 @@ export default class MainNavigator extends Component<Props> {
     let menu =
 
         <View
-        style={{position: 'absolute', top: 12, left: 12}}>
+        style={{position: 'absolute', top: 12, left: 12, zIndex:20}}>
         <TouchableOpacity
           onPress={() => {this.navigate(0);}}>
 
@@ -303,6 +348,8 @@ export default class MainNavigator extends Component<Props> {
 
           {dev}
         {menu}
+        <SermonsAPI
+          setSeries={this.setSeries}/>
       </View>
     );
   }

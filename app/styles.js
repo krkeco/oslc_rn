@@ -1,11 +1,15 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
+let oslcGray = '#626F82';
+
 export default StyleSheet.create({
+  
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
 
   },
+
   app: {
     
   },
@@ -39,7 +43,7 @@ export default StyleSheet.create({
   navBox:{
     borderRadius: 4,
     borderWidth: 0.5,
-    borderColor: '#626F82',
+    borderColor: oslcGray,
 
     flex: 1,
     justifyContent: 'center',
@@ -48,14 +52,14 @@ export default StyleSheet.create({
    fontSize: 45,
    fontFamily: 'FontAwesome', 
    textAlign: 'center',
-   color: '#626F82',
+   color: oslcGray,
   },
   navFont: {
     marginTop: 5,
     fontFamily: 'Futura',
     textAlign: 'center',
     fontSize: 20,
-    color: '#626F82',
+    color: oslcGray,
   },
   hyperlink: {
     color: 'orange'
@@ -67,7 +71,7 @@ export default StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#626F82',
+    color: oslcGray,
     marginBottom: 5,
   },
   small_text: {
@@ -120,6 +124,21 @@ export default StyleSheet.create({
   },
 
   appLogoContainer: {
+  },
+
+  twoPickers: {
+    fontFamily: 'Futura',
+    fontSize: 24,
+    marginTop: -20,
+
+    width: '70%',
+    height: 65,
+  },
+  twoPickerItems: {
+    fontFamily: 'Raleway',
+    fontSize: 18,
+    height: 65,
+    color: 'white'
   },
 
 
