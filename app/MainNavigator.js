@@ -168,16 +168,13 @@ export default class MainNavigator extends Component<Props> {
 
         {name: 'recording',
         view:  
-          // <View
-          //   style={[{height: '100%', width: '100%'}]}>
-          //   <WebView
-          //     ref='WEBVIEW_REF'
-          //     source={{uri: 'https://sermons.oslcarcadia.com'}}
-          //     style={{height: Dimensions.get('window').height}}
-          //     />
-          // </View>
-        <SermonsView
+          <View
+            style={[{height: '100%', width: '100%'}]}>
+            
+            <Header title="Recordings"/>
+            <SermonsView
                 series = {this.state.series}/>
+          </View>
               }, 
 
         {name: 'calendar',

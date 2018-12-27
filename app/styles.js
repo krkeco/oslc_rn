@@ -10,8 +10,51 @@ export default StyleSheet.create({
 
   },
 
+
+  horizontal: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  vertical : {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+  },
+
   app: {
     
+  },
+
+  recordingModal: {
+    borderRadius: 5,
+    backgroundColor: oslcGray,
+    height: 100,
+    margin: 5,
+    paddingTop: 10,
+
+
+  },
+  recordingIcons: { 
+    fontSize: 32, 
+    padding: 4,
+    marginLeft: 10,
+    width: 38, 
+    height: 38, 
+    fontFamily: 'FontAwesome',
+  },
+  recordingFont: {
+    fontFamily: 'Futura',
+    fontSize: 18,
+    margin: 5,
+    color: 'white',
+  },
+  recordingSubFont: {
+    fontFamily: 'Raleway',
+    fontSize: 10,
+    marginLeft: 7,
+    marginTop: 0,
+    color: 'white'
   },
 
   navContainer: {
