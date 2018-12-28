@@ -190,8 +190,6 @@ export default class MainNavigator extends Component<Props> {
               style={{height: Dimensions.get('window').height}}
               />
           </View>
-          // <CalendarView
-          //   calendar={this.state.calendar}/>
               }, 
 
         {name: 'groups',
@@ -310,54 +308,6 @@ export default class MainNavigator extends Component<Props> {
 
     let dev = null;
 
-    // if(__DEV__){
-    //     dev = <Text style={{position: 'absolute', bottom: 0}}>calendar: waiting</Text>;
-    //     if(this.state.calendar != null
-    //       && this.state.calendar != undefined){
-    //       dev =
-    //       <View
-    //         style={{height: '0%', position: 'absolute', top: 0, right:0}}>
-    //        <Text>calendar: {this.state.calendar.summary}</Text>
-    //        <Text>calendar: {this.state.calendar.items[0].start.dateTime}</Text>
-    
-    //       </View>;
-    
-    //     }
-    // }
-     
-        // <CalendarAPI
-        //   setCalendar={(calendarApi) => {
-        //     this.setState({calendar: calendarApi});
-        //   }}/>
-        // <View
-        // style={{height: '0%', position: 'absolute', top: 0}}>
-        //   <SermonsAPI
-        //     setSeries={(seriesApi) => {
-        //       this.setState({series: seriesApi});
-        //     }}/>
-        // </View>
-
-
-
-    // let series = <Text>no series from API </Text>;
-
-    // if(this.state.series != null
-    //   && this.state.series != undefined
-    //   && this.state.series.length > 0){
-    //   series = 
-    //   <View style={styles.container}>
-    //   {this.state.series.map((series,seriesIndex) => {
-        
-    //     return <View key={seriesIndex}>
-    //       <Text>{series.title}</Text>
-    //       {series.services.map((service,serviceIndex) =>{
-    //         return <Text key={serviceIndex}>{service.title}</Text>
-    //       })}
-    //     </View>
-    //   })
-    //   }
-    //   </View>;
-    // }
 
     return (
       <View style={[styles.container]}>
