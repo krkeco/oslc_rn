@@ -19,6 +19,7 @@ export default class Series extends Component<Props> {
     super(props);
     this.state = {
       playing: false,
+      playType: 'sermon',
 
     }
   }
@@ -48,8 +49,8 @@ export default class Series extends Component<Props> {
   }
 
 
-  setPlayButton = (recordingType) => {
-    let trackUrl = 'https://oslcarcadia.com/sermons/'+this.props.service.date+'_'+recordingType+'.mp3';
+  setPlayButton = () => {
+    let trackUrl = 'https://oslcarcadia.com/sermons/'+this.props.service.date+'_'+this.state.playType+'.mp3';
 
     if(this.state.playing){
      return <TouchableOpacity
@@ -75,28 +76,59 @@ export default class Series extends Component<Props> {
   }
 
   render() {
+    let sermonStyle = null;
+    let serviceStyle = null;
+    if(this.state.playType == 'sermon'){
+      sermonStyle = {
+    borderWidth: 0.75,
+    borderColor: 'black',};
+    }else{
+      serviceStyle = {
+    borderWidth: 0.75,
+    borderColor: 'black',};
+    }
 
-    let playSermonButton =  this.setPlayButton('sermon');
-    let playServiceButton =  this.setPlayButton('service');
+    let playButton =  this.setPlayButton();
+    
+
 
     return (
       <View style={styles.recordingModal} >
         <View style={[styles.horizontal,{marginTop: -10}]}>
             <Text style={[styles.recordingFont,{flex: 9}]}>{this.props.service.title}</Text>
-            <Text style={[styles.recordingFont,{flex: 4}]}>{this.parseDate(this.props.service.date)}</Text>
+            <Text style={[styles.recordingFont,{flex: 5}]}>{this.parseDate(this.props.service.date)}</Text>
           </View>
         <View style={[styles.horizontal,{marginTop: -25}]}>
           
           <View style={[styles.vertical,{flex:7}]}>
             <Text style={[styles.recordingFont,{color: 'black', marginTop: 15}]}>{this.props.service.speaker}</Text>
           </View>
+
           <View style={[styles.vertical,{flex:2}]}>
-            {playSermonButton}
-            <Text style={styles.recordingSubFont} >Sermon</Text>
+            
+            <TouchableOpacity
+              style={sermonStyle}
+              onPress={() => {
+                SoundPlayer.pause();
+                this.setState({playType: 'sermon'});
+              }}>
+            
+                  <Text style={styles.recordingSubFont} >Sermon</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity
+              style={[serviceStyle,{marginTop: 10}]}
+              onPress={() => {
+                SoundPlayer.pause();
+                this.setState({playType: 'service'});
+              }}>
+                  <Text style={styles.recordingSubFont} >Service</Text>
+            
+            </TouchableOpacity>
+
           </View>
           <View style={[styles.vertical,{flex:2}]}>
-            {playServiceButton}
-            <Text style={styles.recordingSubFont} >Service</Text>
+            {playButton}
           </View>
         </View>
 

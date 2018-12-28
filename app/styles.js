@@ -40,11 +40,14 @@ export default StyleSheet.create({
     backgroundColor: 'white',
 
     fontSize: 18,
-    paddingLeft: 14, 
+    marginTop: 3,
+    marginLeft: 5,
+    paddingLeft: 12, 
     padding: 10,
     width: 38, 
     height: 38, 
     fontFamily: 'FontAwesome',
+    textAlign: 'center',
   },
   recordingFont: {
     fontFamily: 'Futura',
@@ -54,10 +57,10 @@ export default StyleSheet.create({
   },
   recordingSubFont: {
     fontFamily: 'Raleway',
-    fontSize: 10,
-    marginLeft: 7,
+    fontSize: 14,
     marginTop: 0,
-    color: 'white'
+    color: 'white',
+    textAlign: 'center',
   },
 
   navContainer: {
@@ -138,7 +141,6 @@ export default StyleSheet.create({
   },
   title: {
     fontFamily: 'Futura',
-    marginLeft: 20,
     marginTop: -5,
     fontSize: 28,
     color: 'white',

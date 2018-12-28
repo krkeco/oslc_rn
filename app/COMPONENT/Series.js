@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   TouchableHighlight,
   ScrollView,
   Modal,
@@ -76,7 +77,13 @@ export default class Series extends Component<Props> {
           onPress={() => {
             this.toggleModal();
           }}>
+          <View>
           <Text style={styles.title} >{this.props.series.title}</Text>
+          <Image
+           style={{width: '100%', height:'50%',marginLeft: '0%'}}
+           source={{uri: this.props.series.image}}
+           />
+          </View>
         </TouchableHighlight>
 
       </View>

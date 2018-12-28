@@ -304,8 +304,6 @@ export default class MainNavigator extends Component<Props> {
       </View>;
     }
 
-
-
     let dev = null;
 
 
