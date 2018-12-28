@@ -43,6 +43,11 @@ export default class Series extends Component<Props> {
 
   }
 
+  parseDate = (date) => {
+    return date.slice(4,6) + "/" + date.slice(6,8) + "/" + date.slice(0,4);
+  }
+
+
   setPlayButton = (recordingType) => {
     let trackUrl = 'https://oslcarcadia.com/sermons/'+this.props.service.date+'_'+recordingType+'.mp3';
 
@@ -62,7 +67,7 @@ export default class Series extends Component<Props> {
       onPress={() => {this.playMedia(trackUrl)}}>
       
       <Text style={styles.recordingIcons}>
-        {Icons.chevronRight}
+        {Icons.play}
       </Text>
     </TouchableOpacity>;
 
@@ -74,14 +79,11 @@ export default class Series extends Component<Props> {
     let playSermonButton =  this.setPlayButton('sermon');
     let playServiceButton =  this.setPlayButton('service');
 
-  
-    
-
     return (
       <View style={styles.recordingModal} >
         <View style={[styles.horizontal,{marginTop: -10}]}>
-            <Text style={[styles.recordingFont,{flex: 5}]}>{this.props.service.title}</Text>
-            <Text style={[styles.recordingFont,{flex: 2}]}>{this.props.service.date}</Text>
+            <Text style={[styles.recordingFont,{flex: 9}]}>{this.props.service.title}</Text>
+            <Text style={[styles.recordingFont,{flex: 4}]}>{this.parseDate(this.props.service.date)}</Text>
           </View>
         <View style={[styles.horizontal,{marginTop: -25}]}>
           

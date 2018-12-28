@@ -25,10 +25,16 @@ export default class App extends Component<Props> {
 
 
   render() {
+
+    headerStyle = styles.title;
+    if(this.props.type == "2"){
+      headerStyle = styles.title2;
+    }
+
     return (
       <View
         style={styles.header}>
-        <Text style={styles.title}>{this.props.title}</Text>
+        <Text style={headerStyle}>{this.props.title}</Text>
           <Image
             style={styles.appLogo}
             source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>

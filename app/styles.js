@@ -36,9 +36,12 @@ export default StyleSheet.create({
 
   },
   recordingIcons: { 
-    fontSize: 32, 
-    padding: 4,
-    marginLeft: 10,
+    borderRadius: 19,
+    backgroundColor: 'white',
+
+    fontSize: 18,
+    paddingLeft: 14, 
+    padding: 10,
     width: 38, 
     height: 38, 
     fontFamily: 'FontAwesome',
@@ -91,7 +94,7 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  navFontA: {
+  navFontAwesome: {
    fontSize: 45,
    fontFamily: 'FontAwesome', 
    textAlign: 'center',
@@ -106,16 +109,6 @@ export default StyleSheet.create({
   },
   hyperlink: {
     color: 'orange'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: oslcGray,
-    marginBottom: 5,
   },
   small_text: {
     fontFamily: 'Raleway',
@@ -140,7 +133,6 @@ export default StyleSheet.create({
     height: 65,
     width: '100%',
     paddingTop: 20,
-    
     left: 0,
     top: 0,
   },
@@ -151,6 +143,13 @@ export default StyleSheet.create({
     fontSize: 28,
     color: 'white',
     textAlign: 'center',
+  },
+  title2: {
+    fontFamily: 'Futura',
+    marginLeft: 50,
+    marginTop: -5,
+    fontSize: 24,
+    color: 'white',
   },
   backButton: {
     position: 'absolute', 

@@ -28,10 +28,10 @@ export default class Sermons extends Component<Props> {
 
   }
 
-  SortByDate = (a, b) => {
+  sortSeries = (a, b) => {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
     }
-  SortByDateString = (a, b) => {
+  sortServices = (a, b) => {
         return b.date - a.date;
     }
 
@@ -52,12 +52,16 @@ export default class Sermons extends Component<Props> {
 
       if (response.status >= 200 && response.status < 300) {
 
-        var seriesData = JSON.parse(res);
-        // seriesData.sort(this.SortByDate);
 
-        // seriesData.map((series, i) =>
-        //   series.services.sort(this.SortByDateString)
-        // );
+
+        var seriesData = JSON.parse(res);
+
+        seriesData.series.sort(this.sortSeries);
+
+        seriesData.series.map((series, i) => {
+          series.services.sort(this.sortServices);
+        }
+        );
 
         this.setState({series: seriesData.series});
         this.props.setSeries(seriesData.series);

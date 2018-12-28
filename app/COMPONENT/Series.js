@@ -48,15 +48,15 @@ export default class Series extends Component<Props> {
             <View>
 
 
-          <Header title={this.props.series.title}/>
-              
+            <Header 
+              type="2"
+              title={this.props.series.title}/>
 
-
-          <BackButton
-            onPress={()=>{this.setState({modalVisible: false});}}/>
+            <BackButton
+              onPress={()=>{this.setState({modalVisible: false});}}/>
 
           </View>
-        <ScrollView style={styles.container}>
+          <ScrollView style={styles.container}>
                    
             <View>
               {this.props.series.services.map((service,index) =>{
@@ -67,7 +67,7 @@ export default class Series extends Component<Props> {
                 })}
             </View>
 
-      </ScrollView>
+          </ScrollView>
       
         </Modal>
 
