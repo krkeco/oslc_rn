@@ -7,8 +7,7 @@ export default StyleSheet.create({
 
   },
   app: {
-    fontFamily: 'Futura',
-
+    
   },
 
   navContainer: {
@@ -16,6 +15,10 @@ export default StyleSheet.create({
     justifyContent: 'space-evenly',
   },
 
+  infoAwesome: {
+    marginTop:5,
+    fontFamily: 'FontAwesome',
+  },
   officeHyperlink: {
     flex: 1,
     marginLeft: 20,
@@ -45,11 +48,14 @@ export default StyleSheet.create({
    fontSize: 45,
    fontFamily: 'FontAwesome', 
    textAlign: 'center',
+   color: '#626F82',
   },
   navFont: {
+    marginTop: 5,
     fontFamily: 'Futura',
     textAlign: 'center',
     fontSize: 20,
+    color: '#626F82',
   },
   hyperlink: {
     color: 'orange'
@@ -65,7 +71,8 @@ export default StyleSheet.create({
     marginBottom: 5,
   },
   small_text: {
-    fontSize: 15,
+    fontFamily: 'Raleway',
+    fontSize: 20,
   },
   normal_text: {
     fontSize: 25,
@@ -83,31 +90,37 @@ export default StyleSheet.create({
   },
   header: {
     backgroundColor: '#555',
-    height: 80,
+    height: 65,
     width: '100%',
-    padding: 20,
-
+    paddingTop: 20,
+    
     left: 0,
     top: 0,
   },
   title: {
+    fontFamily: 'Futura',
     marginLeft: 20,
     marginTop: -5,
     fontSize: 28,
-    color: '#626F82',
+    color: 'white',
     textAlign: 'center',
   },
+  backButton: {
+    position: 'absolute', 
+    top: 20,
+    left: 10, 
+  },
 
-appLogo: {
-  height: 50,
-  width: 50,
-  right: 10,
-  top: 5,
-  position: 'absolute',
-},
+  appLogo: {
+    height: 50,
+    width: 50,
+    right: 10,
+    top: 5,
+    position: 'absolute',
+  },
 
-appLogoContainer: {
-},
+  appLogoContainer: {
+  },
 
 
 });

@@ -42,7 +42,7 @@ export default class NavigatorView extends Component<Props> {
           <TouchableOpacity
           style={styles.navBox}
           onPress={this.props.isBulletin}>
-          <Text style={styles.navFontA}>{Icons.fileTextO}</Text>
+          <Text style={styles.navFontA}>{Icons.leanpub}</Text>
           <Text style={styles.navFont}>Bulletin</Text>
           </TouchableOpacity>
 
@@ -68,14 +68,14 @@ export default class NavigatorView extends Component<Props> {
           <TouchableOpacity
           style={styles.navBox}
           onPress={this.props.isGroups}>
-          <Text style={styles.navFontA}>{Icons.shareSquare}</Text>
+          <Text style={styles.navFontA}>{Icons.child}</Text>
           <Text style={styles.navFont}>Groups</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
           style={styles.navBox} onPress={() => Communications.email(['requests@prayers.oslcarcadia.com'],null,null,'Prayer Request from Mobile App','Dear OSLC Prayer Team, \n\n\n')}> 
-          <Text style={[styles.navFontA,{color: 'red'}]}>{Icons.heart}</Text>     
-            <Text style={styles.navFont}>Prayer Request</Text>
+          <Text style={[styles.navFontA,{color: '#d50055'}]}>{Icons.heart}</Text>     
+            <Text style={styles.navFont}>Prayer{'\n'}Request</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -100,7 +100,7 @@ export default class NavigatorView extends Component<Props> {
           style={styles.navBox}
           onPress={this.props.isOffice}>
           <Text style={styles.navFontA}>{Icons.info}</Text>
-          <Text style={styles.navFont}>Church Info</Text>
+          <Text style={styles.navFont}>Church{'\n'}Info</Text>
           </TouchableOpacity>
 
           <TouchableOpacity

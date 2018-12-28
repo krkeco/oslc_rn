@@ -148,7 +148,16 @@ export default class MainNavigator extends Component<Props> {
         {name: 'calendar',
         view: 
           <View
-            style={[{top: 40, height: '100%', width: '100%'}]}>
+            style={[{height: '100%', width: '100%'}]}>
+            
+            <View
+              style={styles.header}>
+              <Text style={styles.title}>Calendar</Text>
+                <Image
+                  style={styles.appLogo}
+                  source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
+            </View>
+
             <WebView
               ref='WEBVIEW_REF'
               source={{uri: 'https://calendar.google.com/calendar/embed?src=40p2dd8jdh8nr8phgcrlvadcg0%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA'}}
@@ -165,7 +174,7 @@ export default class MainNavigator extends Component<Props> {
             style={[{height: '100%', width: '100%'}]}>
             <View
               style={styles.header}>
-              <Text style={styles.title}>Church Groups</Text>
+              <Text style={[styles.title]}>Groups</Text>
                 <Image
                   style={styles.appLogo}
                   source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
@@ -174,7 +183,7 @@ export default class MainNavigator extends Component<Props> {
             <WebView
               ref='WEBVIEW_REF'
               source={{uri: 'https://www.groups.oslcarcadia.com/index.php'}}
-              style={{height: Dimensions.get('window').height}}
+              style={{marginTop: -60, zIndex: -10, height: Dimensions.get('window').height}}
               />
           </View>},
 
@@ -205,7 +214,7 @@ export default class MainNavigator extends Component<Props> {
             style={[{height: '100%', width: '100%'}]}>
              <View
               style={styles.header}>
-              <Text style={styles.title}>Church Staff</Text>
+              <Text style={styles.title}>Staff</Text>
                 <Image
                   style={styles.appLogo}
                   source={{uri: 'https://www.oslcarcadia.com/img/logo/cheesy.png'}}/>
@@ -230,13 +239,11 @@ export default class MainNavigator extends Component<Props> {
     let menu =
 
         <View
-        style={{position: 'absolute', top: 20, left: 10}}>
+        style={{position: 'absolute', top: 12, left: 12}}>
         <TouchableOpacity
           onPress={() => {this.navigate(0);}}>
-        
 
-
-          <Text style={{ fontSize: 28, fontFamily: 'FontAwesome'}}>{Icons.chevronLeft}</Text>
+          <Text style={{ fontSize: 32, padding: 4, width: 38, height: 38, fontFamily: 'FontAwesome'}}>{Icons.chevronLeft}</Text>
         
         </TouchableOpacity>
         </View>;
@@ -247,7 +254,7 @@ export default class MainNavigator extends Component<Props> {
     }
     if(this.state.canGoBack){
       menu = <View
-        style={{position: 'absolute', top: 20, left: 10}}>
+        style={{position: 'absolute', top: 20, left: 10, zIndex: 20}}>
         <TouchableOpacity
           disabled={!this.state.canGoBack}
           onPress={this.onBack.bind(this)}
@@ -261,20 +268,20 @@ export default class MainNavigator extends Component<Props> {
 
     let dev = null;
 
-    if(__DEV__){
-        dev = <Text style={{position: 'absolute', bottom: 0}}>calendar: waiting</Text>;
-        if(this.state.calendar != null
-          && this.state.calendar != undefined){
-          dev =
-          <View
-            style={{height: '0%', position: 'absolute', top: 0, right:0}}>
-           <Text>calendar: {this.state.calendar.summary}</Text>
-           <Text>calendar: {this.state.calendar.items[0].start.dateTime}</Text>
+    // if(__DEV__){
+    //     dev = <Text style={{position: 'absolute', bottom: 0}}>calendar: waiting</Text>;
+    //     if(this.state.calendar != null
+    //       && this.state.calendar != undefined){
+    //       dev =
+    //       <View
+    //         style={{height: '0%', position: 'absolute', top: 0, right:0}}>
+    //        <Text>calendar: {this.state.calendar.summary}</Text>
+    //        <Text>calendar: {this.state.calendar.items[0].start.dateTime}</Text>
     
-          </View>;
+    //       </View>;
     
-        }
-    }
+    //     }
+    // }
      
         // <CalendarAPI
         //   setCalendar={(calendarApi) => {
@@ -289,7 +296,7 @@ export default class MainNavigator extends Component<Props> {
         // </View>
 
     return (
-      <View style={[styles.container,styles.app]}>
+      <View style={[styles.container]}>
         {webView}
         {content}
 
