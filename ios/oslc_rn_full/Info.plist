@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>oslc_rn_full</string>
+	<string>OSLCArcadia</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -21,9 +21,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>6</string>
 	<key>CodePushDeploymentKey</key>
-	<string>5-jbW_5t0bsnLINuG7MkJK4TQTYj450b762e-9367-4480-a5b9-b4ba8806e540</string>
+	<string>O3SukLE-ofZN6y_u5HzF59C6ljU7450b762e-9367-4480-a5b9-b4ba8806e540</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -42,11 +42,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Futura.ttf</string>
-		<string>futura_medium_bt.ttf</string>
-		<string>Raleyway-Regular.ttf</string>
+		<string>Raleway.ttf</string>
 		<string>RalewayThin.ttf</string>
 		<string>FontAwesome.ttf</string>
-		<string>fontawesome-webfont.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
