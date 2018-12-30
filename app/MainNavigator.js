@@ -54,6 +54,7 @@ export default class MainNavigator extends Component<Props> {
       
       //sermon series
       series: null,
+      sermonDataReceived: false,
       calendar: {
         summary: 'a summary',
         status: 'confirmed',
@@ -87,7 +88,10 @@ export default class MainNavigator extends Component<Props> {
   }
 
   setSeries = (seriesData) => {
-    this.setState({series: seriesData});
+    this.setState({
+      series: seriesData,
+      sermonDataReceived: true,
+    });
   }
 
   handleBackPress = () => {
@@ -142,6 +146,7 @@ export default class MainNavigator extends Component<Props> {
              
         {name: 'navigator',
         view: <NavigatorView
+                sermonDataReceived={this.state.sermonDataReceived}
                 isBulletin={() => {this.navigate(this.state.subpageIndex);}}
                 isRecording={() => {this.navigate(2);}}
                 isCalendar={() => {this.navigate(3);}}

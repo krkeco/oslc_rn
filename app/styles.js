@@ -10,6 +10,18 @@ export default StyleSheet.create({
 
   },
 
+loader: {
+    // position: absolute;
+    // top: 20%;
+    // left: 50%;
+    alignSelf: 'center',
+    width: 50,
+    height: 50,
+    // margin:-60px 0 0 -60px;
+    
+    // -webkit-animation:spin 4s linear infinite;
+    // animation:spin 4s linear infinite;
+},
 
   horizontal: {
     flex: 1,

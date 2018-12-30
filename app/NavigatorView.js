@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Text,
   View,
+  Image,
   WebView,
 } from 'react-native';
 
@@ -16,6 +17,8 @@ import Hyperlink from 'react-native-hyperlink';
 import Communications from 'react-native-communications';
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
+
+import AnimatedLoader from './COMPONENT/AnimatedLoader.js';
 
 
 type Props = {};
@@ -34,6 +37,21 @@ export default class NavigatorView extends Component<Props> {
 
 
   render() {
+    let sermonBox = <View style={styles.navBox} >
+      <AnimatedLoader/>
+    </View>  ;
+    
+    if(this.props.sermonDataReceived){
+      sermonBox =  
+        <TouchableOpacity
+           style={styles.navBox}
+           onPress={this.props.isRecording}>
+          <Text style={styles.navFontAwesome}>{Icons.headphones}</Text>
+        <Text style={[styles.navFont]}>Archive</Text>
+        </TouchableOpacity>;
+
+      }
+
     return (
       <View style={styles.navContainer}>
 
@@ -54,13 +72,7 @@ export default class NavigatorView extends Component<Props> {
           <Text style={styles.navFont}>Calendar</Text>
           </TouchableOpacity>
 
-           <TouchableOpacity
-           style={styles.navBox}
-          onPress={this.props.isRecording}>
-          <Text style={styles.navFontAwesome}>{Icons.headphones}</Text>
-          <Text style={[styles.navFont]}>Archive</Text>
-          </TouchableOpacity>
-
+          {sermonBox}
 
         </View>
         <View style={styles.navDuets}>
