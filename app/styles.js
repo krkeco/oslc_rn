@@ -41,7 +41,7 @@ loader: {
   recordingModal: {
     borderRadius: 5,
     backgroundColor: oslcGray,
-    height: 100,
+    height: 130,
     margin: 5,
     paddingTop: 10,
 

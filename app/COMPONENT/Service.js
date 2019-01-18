@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import styles from '../styles.js';
-
+import DurationBar from './DurationBar'
 import SoundPlayer from 'react-native-sound-player';
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
@@ -20,25 +20,61 @@ export default class Series extends Component<Props> {
     this.state = {
       playing: false,
       playType: 'sermon',
+      duration: 0,
+      current_time: 0,
 
     }
   }
 
-  playMedia = (url) =>{
+  playMedia = (url) => {
      try {
       // play the file tone.mp3
       // SoundPlayer.playSoundFile('tone', 'mp3')
       // or play from url
       
-      this.setState({playing: true});
+      this.setState({playing: true},
+      this.getCurrentTime
+        );
 
-      SoundPlayer.playUrl(url)
+      SoundPlayer.playUrl(url);
+      this.getDuration();
+
     } catch (e) {
       alert('Something went wrong with playback! Please check your internet connection, or try restarting the app.');
       console.log(`cannot play the sound file`, e);
     }
   }
 
+  setRecordingProgress = (progressPercent) =>{
+
+  } 
+
+  getDuration = async () => { // You need the keyword `async`
+    try {
+      const info = await SoundPlayer.getInfo() // Also, you need to await this because it is async
+      // console.log('getInfo', info) // {duration: 12.416, currentTime: 7.691}
+      this.setState({duration: info.duration});
+
+      
+    } catch (e) {
+      console.log('There is no song playing', e)
+    }
+  }
+
+  getCurrentTime = async () => { // You need the keyword `async`
+    if(this.state.playing){
+        try {
+          const info = await SoundPlayer.getInfo() // Also, you need to await this because it is async
+          // console.log('getInfo', info) // {duration: 12.416, currentTime: 7.691}
+          this.setState({current_time: info.currentTime},
+            this.getCurrentTime);
+          
+          
+        } catch (e) {
+          console.log('There is no song playing', e)
+        }
+      }
+  }
 
   componentWillMount(){
 
@@ -78,30 +114,40 @@ export default class Series extends Component<Props> {
   render() {
     let sermonStyle = null;
     let serviceStyle = null;
+
+    // let recordingDuration = 
+    // let recordingCurrentTime = 
+
     if(this.state.playType == 'sermon'){
       sermonStyle = {
     borderWidth: 0.75,
+    borderRadius: 2,
     borderColor: 'black',};
     }else{
       serviceStyle = {
     borderWidth: 0.75,
+    borderRadius: 2,
     borderColor: 'black',};
     }
 
     let playButton =  this.setPlayButton();
-    
-
+            // <DurationBar
+            //   setProgress={(progress) => this.setRecordingProgress(progress)}
+            //   duration={this.state.duration}
+            //   progress={this.state.current_time}
+            //   />
 
     return (
       <View style={styles.recordingModal} >
+      
         <View style={[styles.horizontal,{marginTop: -10}]}>
             <Text style={[styles.recordingFont,{flex: 9}]}>{this.props.service.title}</Text>
             <Text style={[styles.recordingFont,{flex: 5}]}>{this.parseDate(this.props.service.date)}</Text>
           </View>
-        <View style={[styles.horizontal,{marginTop: -25}]}>
+        <View style={[styles.horizontal,{}]}>
           
           <View style={[styles.vertical,{flex:7}]}>
-            <Text style={[styles.recordingFont,{color: 'black', marginTop: 15}]}>{this.props.service.speaker}</Text>
+            <Text style={[styles.recordingFont,{color: 'black', marginTop: -5}]}>{this.props.service.speaker}</Text>
           </View>
 
           <View style={[styles.vertical,{flex:2}]}>
