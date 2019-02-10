@@ -56,9 +56,9 @@ export default class Office extends Component<Props> {
         <Text style={[styles.small_text,{textAlign: 'center'}]}>
                8:00AM Liturgical Service
         {'\n'} 9:30AM Bible Classes for all ages
-        {'\n'} 10:30AM Modern Worship
+        
         {'\n'} 10:45AM Liturgical Service
-        {'\n'} 6:30PM Praise Service 
+        {'\n'} 6:00PM Modern Praise Service 
         </Text>
 
         <Text style={styles.normal_text}>Monday:</Text> 

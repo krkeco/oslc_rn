@@ -323,9 +323,9 @@ export default class MainNavigator extends Component<Props> {
                     "updated_at": "2018-04-30T20:53:29.373Z",
                     "speaker": "Deacon Michael Powers"
                 };
-    content = <Service
-                    service={localservice}
-                  />;
+    // content = <Service
+    //                 service={localservice}
+    //               />;
 
     return (
       <View style={[styles.container]}>
