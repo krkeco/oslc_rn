@@ -1,0 +1,248 @@
+[33mcommit 5a0d8e22523a4f3e4b523307c89ff650d636e668[m
+Author: KC <krkeco@gmail.com>
+Date:   Fri Jan 18 14:36:09 2019 -0800
+
+    add a duration bar but react-native-sound-player cannot seek so it is moot
+
+[33mcommit eedbfeb746f8016939da6023ebbfb2506d86804c[m
+Author: KC <krkeco@gmail.com>
+Date:   Sun Dec 30 15:06:27 2018 -0800
+
+    update gradle from implementation to compile
+
+[33mcommit b0eb42332af54b70aa5dbe5b2b2d1becc3edaf69[m
+Author: KC <krkeco@gmail.com>
+Date:   Sun Dec 30 14:09:34 2018 -0800
+
+    add recording api loader
+
+[33mcommit 8bf7f390546e19c8b1e94d9c04421270c7786d2f[m
+Author: KC <krkeco@gmail.com>
+Date:   Fri Dec 28 14:56:25 2018 -0800
+
+    Stylize recordings views
+
+[33mcommit fbc8d91eb8b7cb697b15e000512932c7b65dc77b[m
+Author: KC <krkeco@gmail.com>
+Date:   Fri Dec 28 12:38:15 2018 -0800
+
+    remove old code
+
+[33mcommit 903ad3e63e146c09001b0089cfbf86479af93fa9[m
+Author: KC <krkeco@gmail.com>
+Date:   Fri Dec 28 12:14:45 2018 -0800
+
+    Recommit, retry
+
+[33mcommit f4a734495054a66e323e8ec89771c2ab02d90043[m
+Author: KC <krkeco@gmail.com>
+Date:   Fri Dec 28 12:07:36 2018 -0800
+
+    Format services
+
+[33mcommit d891cc836a423bc4ab967c08bc39ff10525036bd[m
+Author: KC <krkeco@gmail.com>
+Date:   Thu Dec 27 10:09:45 2018 -0800
+
+    Added Series view, Service View, Recording Component, Feature: react-native-sound-player
+
+[33mcommit 2fa4d1344c7d314dd06a4eaaff8f159cfda7b7b1[m
+Author: KC <krkeco@gmail.com>
+Date:   Sun Dec 23 13:07:12 2018 -0800
+
+    Connect recordings api to skeleton view
+
+[33mcommit 874a38edf693b3299cff12f6bde72632b7af246e[m
+Author: KC <krkeco@gmail.com>
+Date:   Sun Dec 23 12:58:47 2018 -0800
+
+    Make header component
+
+[33mcommit 1ec22e7fe8557079ab317c308a271b1fd1f6ce2c[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Oct 5 12:46:07 2018 -0700
+
+    small text changes
+
+[33mcommit 96fd6f207e3575b5a93bf91cf07ef3a7531ec237[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Mon Oct 1 17:04:36 2018 -0700
+
+    polish views
+
+[33mcommit f425a2aea8df0842488f53d2eb9cb656c85c98fe[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Mon Oct 1 11:07:52 2018 -0700
+
+    small details
+
+[33mcommit a0262ad2dfcd4d9625b97fd2196254b04c4fc9fc[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Sun Sep 30 17:15:25 2018 -0700
+
+    ios futura fine~
+
+[33mcommit 0c0515115e9ccb58cb7d36d7e34b6a3e82180173[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Sep 28 09:08:34 2018 -0700
+
+    futura for ios
+
+[33mcommit e932ed993c42576adcc611c7f766f38ede365867[m
+Merge: 15e2b6c 6742361
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Sep 28 08:59:22 2018 -0700
+
+    merge
+
+[33mcommit 6742361e13f42c51a95d69d0ab4f6b3f3a51116b[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Sep 28 08:56:16 2018 -0700
+
+    new android bundle
+
+[33mcommit db48e54120631debf257c0d29fd2be72c5a89e6b[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Sep 28 08:48:47 2018 -0700
+
+    add futura
+
+[33mcommit 15e2b6cc31096b8c489cd216a267cd4f84d721b1[m
+Merge: 5173fd0 304e2bd
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Sep 28 08:34:51 2018 -0700
+
+    merge
+
+[33mcommit 5173fd0d2d95eed2b5749129177d96a79ad8897c[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Sep 28 08:31:17 2018 -0700
+
+    main?
+
+[33mcommit 304e2bd931efd9d2af65a4f9610d85bdec1dec31[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Sat Sep 8 12:08:34 2018 -0700
+
+    remvoe https for http to work on ios
+
+[33mcommit fe00ffd20211f89ba9ea7912f553900bfbab2ca1[m
+Merge: b50843e fd2e606
+Author: krkeco <krkeco@gmail.com>
+Date:   Sun Sep 2 14:51:50 2018 -0700
+
+    Merge branch 'master' of bitbucket.org:krkeco/oslc_rn
+
+[33mcommit b50843e53f0841c2b5e05e8edcc2c4daf1e77717[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Sun Sep 2 14:51:36 2018 -0700
+
+    stage
+
+[33mcommit fd2e6061a1dfed29408f126c2accfa019e4f6847[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Sun Sep 2 14:45:28 2018 -0700
+
+    fontawesome and ios up
+
+[33mcommit e3e9a863446349097663b4feba417642671c194c[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Tue Aug 28 09:53:06 2018 -0700
+
+    change donations to external browser because of paypal issues...
+
+[33mcommit 64d1e55fbd1407a05fbe6f35c361639205b663d8[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Mon Aug 27 15:44:04 2018 -0700
+
+    code push setup
+
+[33mcommit dd18ff246526aa466976402cd98680aa143fc2ed[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Wed Aug 15 10:15:19 2018 -0700
+
+    fix detached head issue
+
+[33mcommit b8125683e83b431b28c2f321b4cde5a32b1b2010[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Wed Aug 15 10:11:53 2018 -0700
+
+    finish content and links of about page
+
+[33mcommit 1f6f501334ceb1dda42c696e6f6fa1a6a7347254[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Wed Aug 15 09:59:53 2018 -0700
+
+    add About page, improve hyperlinks
+
+[33mcommit e2dcb2d17bb3f70c6ae0aa879f51597f94147b68[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Wed Aug 15 09:23:51 2018 -0700
+
+    fix pdf view on rotate
+
+[33mcommit 0de60a4761314a0f3699647b2004c32b7ec3844e[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Wed Aug 15 09:15:18 2018 -0700
+
+    fix pdf view on rotate
+
+[33mcommit 5928834893dbf194ceca125198a0adc0a717cc7f[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Sun Aug 12 17:19:41 2018 -0700
+
+    finish off all basic views
+
+[33mcommit 381256fb2429ba3ec8cd81a9b7f8cdda5c10b15b[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Sun Aug 12 14:26:24 2018 -0700
+
+    recommit?
+
+[33mcommit 007b2288884f85542ea4406ff7946da9f94c4598[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Sun Aug 12 13:26:55 2018 -0700
+
+    fullscreen views, __DEV__ info, remove apis to use react applets
+
+[33mcommit c30470e61fffa214d81e73ac1d17855ea637fbf2[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Wed Aug 8 13:02:58 2018 -0700
+
+    calendar api buildout
+
+[33mcommit eb7713b6cab601458dfb6e656ce0283314d2031b[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Mon Aug 6 14:21:32 2018 -0700
+
+    add readme
+
+[33mcommit 77008c8300e5c9a4630d91c3687d72589fd1d7cd[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Mon Aug 6 14:13:22 2018 -0700
+
+    initial calendar api implementation with view
+
+[33mcommit ea9473faf53691ca25f3cbc7228f37a6b912cd1d[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Mon Aug 6 10:39:48 2018 -0700
+
+    install font awesome~
+
+[33mcommit e1a72b2370d0cced5c8b33c5748a5bd8bb819611[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Mon Aug 6 10:22:08 2018 -0700
+
+    finish sermons api connection to view
+
+[33mcommit 1870d8df6bcde43bb3c9f85bb406c318d823e9c7[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Aug 3 16:52:49 2018 -0700
+
+    Add basic nav features
+
+[33mcommit da8c2cf0695d77ce023d4d2457d1756c8f76b39f[m
+Author: krkeco <krkeco@gmail.com>
+Date:   Fri Aug 3 10:08:22 2018 -0700
+
+    Initial commit
