@@ -1,13 +1,63 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
+let oslcGray = '#626F82';
+
 export default StyleSheet.create({
+  
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
 
   },
+
+
+  horizontal: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  vertical : {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+  },
+
   app: {
     
+  },
+
+  recordingModal: {
+    borderRadius: 5,
+    backgroundColor: oslcGray,
+    height: 100,
+    margin: 5,
+    paddingTop: 10,
+
+
+  },
+  recordingIcons: { 
+    borderRadius: 19,
+    backgroundColor: 'white',
+
+    fontSize: 18,
+    paddingLeft: 14, 
+    padding: 10,
+    width: 38, 
+    height: 38, 
+    fontFamily: 'FontAwesome',
+  },
+  recordingFont: {
+    fontFamily: 'Futura',
+    fontSize: 18,
+    margin: 5,
+    color: 'white',
+  },
+  recordingSubFont: {
+    fontFamily: 'Raleway',
+    fontSize: 10,
+    marginLeft: 7,
+    marginTop: 0,
+    color: 'white'
   },
 
   navContainer: {
@@ -39,36 +89,26 @@ export default StyleSheet.create({
   navBox:{
     borderRadius: 4,
     borderWidth: 0.5,
-    borderColor: '#626F82',
+    borderColor: oslcGray,
 
     flex: 1,
     justifyContent: 'center',
   },
-  navFontA: {
+  navFontAwesome: {
    fontSize: 45,
    fontFamily: 'FontAwesome', 
    textAlign: 'center',
-   color: '#626F82',
+   color: oslcGray,
   },
   navFont: {
     marginTop: 5,
     fontFamily: 'Futura',
     textAlign: 'center',
     fontSize: 20,
-    color: '#626F82',
+    color: oslcGray,
   },
   hyperlink: {
     color: 'orange'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#626F82',
-    marginBottom: 5,
   },
   small_text: {
     fontFamily: 'Raleway',
@@ -93,7 +133,6 @@ export default StyleSheet.create({
     height: 65,
     width: '100%',
     paddingTop: 20,
-    
     left: 0,
     top: 0,
   },
@@ -104,6 +143,13 @@ export default StyleSheet.create({
     fontSize: 28,
     color: 'white',
     textAlign: 'center',
+  },
+  title2: {
+    fontFamily: 'Futura',
+    marginLeft: 50,
+    marginTop: -5,
+    fontSize: 24,
+    color: 'white',
   },
   backButton: {
     position: 'absolute', 
@@ -120,6 +166,21 @@ export default StyleSheet.create({
   },
 
   appLogoContainer: {
+  },
+
+  twoPickers: {
+    fontFamily: 'Futura',
+    fontSize: 24,
+    marginTop: -20,
+
+    width: '70%',
+    height: 65,
+  },
+  twoPickerItems: {
+    fontFamily: 'Raleway',
+    fontSize: 18,
+    height: 65,
+    color: 'white'
   },
 
 

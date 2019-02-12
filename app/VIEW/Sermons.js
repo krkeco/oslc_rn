@@ -4,11 +4,16 @@ import {
   StyleSheet,
   Text,
   Alert,
+  ScrollView,
   View,
 } from 'react-native';
 
 import styles from '../styles.js';
 
+import Series from '../COMPONENT/Series.js';
+
+
+ 
 
 type Props = {};
 export default class Sermons extends Component<Props> {
@@ -21,31 +26,36 @@ export default class Sermons extends Component<Props> {
   }
 
   componentWillMount(){
+ 
   	this.setState({series: this.props.series});
   }
 
 
   render() {
 
-    let series = <Text>no series {this.state.series.length}</Text>;
+    let series = null;
 
-    if(this.state.series != null
-      && this.state.series != undefined
-      && this.state.series.length > 0){
+    if(this.props.series != null
+      && this.props.series != undefined
+      && this.props.series.length > 0){
       series = 
       <View>
-      {this.state.series.map((series,index) => {
+        {this.props.series.map((series,index) => {
         
-        return <Text key={index}>{series.title}</Text>
-      })
-      }
+          return <Series
+              key={index}
+              series={series}
+            />
+        })}
       </View>;
     }
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {series}
-      </View>
+      </ScrollView>
+      
     );
   }
+
 }

@@ -28,10 +28,10 @@ export default class Sermons extends Component<Props> {
 
   }
 
-  SortByDate = (a, b) => {
+  sortSeries = (a, b) => {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
     }
-  SortByDateString = (a, b) => {
+  sortServices = (a, b) => {
         return b.date - a.date;
     }
 
@@ -52,62 +52,28 @@ export default class Sermons extends Component<Props> {
 
       if (response.status >= 200 && response.status < 300) {
 
-        var seriesData = JSON.parse(res);
-        // seriesData.sort(this.SortByDate);
 
-        // seriesData.map((series, i) =>
-        //   series.services.sort(this.SortByDateString)
-        // );
+
+        var seriesData = JSON.parse(res);
+
+        seriesData.series.sort(this.sortSeries);
+
+        seriesData.series.map((series, i) => {
+          series.services.sort(this.sortServices);
+        }
+        );
 
         this.setState({series: seriesData.series});
         this.props.setSeries(seriesData.series);
                   
-        // Alert.alert(
-        //   'series Found',
-        //    seriesData.series[0].title + ' accessed',
-        //   [
-        //     {text: 'Oops', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-        //     {text: 'Yes.', onPress: () => console.log('yesh') },
-        //   ],
-        //   { cancelable: true }
-        // );
       
       } else {
         let error = res;
         throw error;
-              //  Alert.alert(
-              //   'We DONT got the cred',
-              //   error.toString(),
-              //   [
-              //     {text: 'Oops', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-              //     {text: 'Yes.', onPress: () => console.log('yesh') },
-              //   ],
-              //   { cancelable: false }
-              // );
         }
       } catch(error) {
-             // Alert.alert(
-             //    'We DONT got the cred',
-             //    error.toString(),
-             //    [
-             //      {text: 'Oops', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-             //      {text: 'Yes.', onPress: () => console.log('yesh') },
-             //    ],
-             //    { cancelable: false }
-             //  );
-            // this.setState({error: error});
             console.log("error " + error);
-            // this.setState({showProgress: false});
-          
-    // Alert.alert(
-    //   'Calendar NOT Found',
-    //   'error: ' + error,
-    //   [
-    //     {text: 'Oops', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-    //     {text: 'Yes.', onPress: () => console.log('yesh') },
-    //   ],
-    //   { cancelable: true }
-    // );
+
         }
 
       }
@@ -117,25 +83,28 @@ export default class Sermons extends Component<Props> {
 
   render() {
 
-    // let series = null;
+    let series = null;
 
-    // if(this.state.series != null
-    //   && this.state.series != undefined
-    //   && this.state.series.length > 0){
-    //   series = 
-    //   <View>
-    //   {this.state.series.map((series,index) => {
+    if(this.state.series != null
+      && this.state.series != undefined
+      && this.state.series.length > 0){
+      series = 
+      <View>
+      {this.state.series.map((series,index) => {
         
-    //     return <Text>{series.title}</Text>
-    //   })
-    //   }
-    //   </View>;
-    // }
+        return <View key={index}>
+          <Text>{series.title}</Text>
+          {series.services.map((service,index) =>{
+            return <Text>{service.title}</Text>
+          })}
+          </View>
+      })
+      }
+      </View>;
+    }
 
     return (
-      <View style={styles.container}>
-        
-      </View>
+      <View />
     );
   }
 }
