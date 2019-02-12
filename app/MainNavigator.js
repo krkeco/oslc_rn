@@ -21,6 +21,7 @@ import {
 
 import styles from './styles.js';
 import Header from './COMPONENT/Header.js';
+import Service from './COMPONENT/Service.js';
 
 import Bulletin from './VIEW/Bulletin.js';
 import ModernBulletin from './VIEW/ModernBulletin.js';
@@ -54,6 +55,7 @@ export default class MainNavigator extends Component<Props> {
       
       //sermon series
       series: null,
+      sermonDataReceived: false,
       calendar: {
         summary: 'a summary',
         status: 'confirmed',
@@ -87,7 +89,10 @@ export default class MainNavigator extends Component<Props> {
   }
 
   setSeries = (seriesData) => {
-    this.setState({series: seriesData});
+    this.setState({
+      series: seriesData,
+      sermonDataReceived: true,
+    });
   }
 
   handleBackPress = () => {
@@ -110,6 +115,10 @@ export default class MainNavigator extends Component<Props> {
   }
 
   render() {
+    if(this.state.series == null
+      && this.state.sermonDataReceived){
+      this.setState({sermonDataReceived: false});
+    }
 
     let webView =  null;
 
@@ -126,8 +135,7 @@ export default class MainNavigator extends Component<Props> {
               this.navigate(itemValue);
             }}
           >
-            <Picker.Item label="Liturgical Bulletin" value={1} />
-            <Picker.Item label="Modern Worship" value={10} />
+            <Picker.Item label="Bulletin" value={1} />
             <Picker.Item label="Newsletter" value={11} />
             
           </Picker>
@@ -138,10 +146,12 @@ export default class MainNavigator extends Component<Props> {
       </View>
     </View>;
 
+            // <Picker.Item label="Modern Worship" value={10} />
     let nav =  [
              
         {name: 'navigator',
         view: <NavigatorView
+                sermonDataReceived={this.state.sermonDataReceived}
                 isBulletin={() => {this.navigate(this.state.subpageIndex);}}
                 isRecording={() => {this.navigate(2);}}
                 isCalendar={() => {this.navigate(3);}}
@@ -304,10 +314,18 @@ export default class MainNavigator extends Component<Props> {
       </View>;
     }
 
-
-
     let dev = null;
-
+    let localservice =   {
+                    "id": 30,
+                    "title": "That's My Boy",
+                    "date": "20180429",
+                    "created_at": "2018-04-30T20:53:29.373Z",
+                    "updated_at": "2018-04-30T20:53:29.373Z",
+                    "speaker": "Deacon Michael Powers"
+                };
+    // content = <Service
+    //                 service={localservice}
+    //               />;
 
     return (
       <View style={[styles.container]}>

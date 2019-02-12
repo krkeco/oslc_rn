@@ -1,7 +1,13 @@
 <resources>
 
 	<!-- production 
-	HfIha2RMA_mI55_ZMSNOvJuxvFYT450b762e-9367-4480-a5b9-b4ba8806e540 -->
+	
+	HfIha2RMA_mI55_ZMSNOvJuxvFYT450b762e-9367-4480-a5b9-b4ba8806e540
+	-->
+	<!-- staging
+	 
+	 -->
+
     <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">
     	o9SqpWtjClLzibxh7OXi-1BspS6Z450b762e-9367-4480-a5b9-b4ba8806e540
     </string>
