@@ -58,7 +58,7 @@ export default class App extends Component<Props> {
   render() {
 
     let url = 'https://oslcarcadia.com/bulletins/'+ this.state.dateString+'.pdf';
-    const source = {uri: url,cache:true};
+    const source = {uri: url,cache:false};
 
     let dev = null;
     // if(__DEV__){

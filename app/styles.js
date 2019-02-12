@@ -47,6 +47,17 @@ loader: {
 
 
   },
+
+  seriesModal: {
+    borderRadius: 5,
+    backgroundColor: oslcGray,
+    height: 'auto',
+    margin: 5,
+    paddingBottom: 10,
+    paddingTop: 10,
+
+
+  },
   recordingIcons: { 
     borderRadius: 19,
     backgroundColor: 'white',

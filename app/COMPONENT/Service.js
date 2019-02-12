@@ -138,16 +138,15 @@ export default class Series extends Component<Props> {
             //   />
 
     return (
-      <View style={styles.recordingModal} >
+      <View style={styles.seriesModal} >
       
-        <View style={[styles.horizontal,{marginTop: -10}]}>
-            <Text style={[styles.recordingFont,{flex: 9}]}>{this.props.service.title}</Text>
-            <Text style={[styles.recordingFont,{flex: 5}]}>{this.parseDate(this.props.service.date)}</Text>
-          </View>
+            <Text style={[styles.recordingFont]}>{this.props.service.title}</Text>
+      
         <View style={[styles.horizontal,{}]}>
           
           <View style={[styles.vertical,{flex:7}]}>
             <Text style={[styles.recordingFont,{color: 'black', marginTop: -5}]}>{this.props.service.speaker}</Text>
+            <Text style={[styles.recordingFont]}>{this.parseDate(this.props.service.date)}</Text>
           </View>
 
           <View style={[styles.vertical,{flex:2}]}>

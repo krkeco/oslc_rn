@@ -135,8 +135,7 @@ export default class MainNavigator extends Component<Props> {
               this.navigate(itemValue);
             }}
           >
-            <Picker.Item label="Liturgical Bulletin" value={1} />
-            <Picker.Item label="Modern Worship" value={10} />
+            <Picker.Item label="Bulletin" value={1} />
             <Picker.Item label="Newsletter" value={11} />
             
           </Picker>
@@ -147,6 +146,7 @@ export default class MainNavigator extends Component<Props> {
       </View>
     </View>;
 
+            // <Picker.Item label="Modern Worship" value={10} />
     let nav =  [
              
         {name: 'navigator',
