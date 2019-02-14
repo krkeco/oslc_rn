@@ -20,8 +20,6 @@ export default class Sermons extends Component<Props> {
     this.getSeries = this.getSeries.bind(this);
   }
 
-
-
   componentWillMount(){
 
     this.getSeries();
@@ -52,8 +50,6 @@ export default class Sermons extends Component<Props> {
 
       if (response.status >= 200 && response.status < 300) {
 
-
-
         var seriesData = JSON.parse(res);
 
         seriesData.series.sort(this.sortSeries);
@@ -78,9 +74,6 @@ export default class Sermons extends Component<Props> {
 
       }
     
-
-
-
   render() {
 
     let series = null;

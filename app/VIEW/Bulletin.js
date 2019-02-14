@@ -32,17 +32,7 @@ export default class App extends Component<Props> {
 
 
   componentWillMount(){
-    var d = new Date();
-    var day = d.getDay();
-    diff = d.getDate() - day + (day == 0 ? 0:0); // adjust when day is sunday
-    
-    new_day =  new Date(d.setDate(diff));
-    year = d.getFullYear();
-    month = d.getMonth() +1;
-    if(month < 10){month = "0" + month;}
-    day = d.getDate();
-    if(day < 10){day = "0" + day;}
-    this.setState({dateString: ''+year+''+month+day}); 
+   
 
     this.checkDimensionValues();
   }
@@ -57,7 +47,7 @@ export default class App extends Component<Props> {
 
   render() {
 
-    let url = 'https://oslcarcadia.com/bulletins/'+ this.state.dateString+'.pdf';
+    let url = 'https://oslcarcadia.com/bulletins/'+ this.props.dateString+'.pdf';
     const source = {uri: url,cache:false};
 
     let dev = null;

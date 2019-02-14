@@ -51,6 +51,7 @@ export default class MainNavigator extends Component<Props> {
     super(props);
     this.state = {
       pdf_text: 'no notes yet',
+      dateString: '20180722',
 
       
       //sermon series
@@ -82,10 +83,27 @@ export default class MainNavigator extends Component<Props> {
 
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+    this.getDateString();
   }
 
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  getDateString = () => {
+
+     var d = new Date();
+    var day = d.getDay();
+    diff = d.getDate() - day + (day == 0 ? 0:0); // adjust when day is sunday
+    
+    new_day =  new Date(d.setDate(diff));
+    year = d.getFullYear();
+    month = d.getMonth() +1;
+    if(month < 10){month = "0" + month;}
+    day = d.getDate();
+    if(day < 10){day = "0" + day;}
+    this.setState({dateString: ''+year+''+month+day}); 
+
   }
 
   setSeries = (seriesData) => {
@@ -146,6 +164,7 @@ export default class MainNavigator extends Component<Props> {
       </View>
     </View>;
 
+
             // <Picker.Item label="Modern Worship" value={10} />
     let nav =  [
              
@@ -172,7 +191,8 @@ export default class MainNavigator extends Component<Props> {
             
             {bulletinTabs}
             
-            <Bulletin/>
+            <Bulletin
+            dateString={this.state.dateString}/>
           </View>
           }, 
 

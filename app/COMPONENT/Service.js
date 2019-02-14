@@ -3,21 +3,26 @@ import {
   Platform,
   StyleSheet,
   Text,
+  Modal,
   View,
+  TouchableHighlight,
   TouchableOpacity,
 } from 'react-native';
 
 import styles from '../styles.js';
 import DurationBar from './DurationBar'
 import SoundPlayer from 'react-native-sound-player';
-
 import FontAwesome, { Icons } from 'react-native-fontawesome';
+
+import Bulletin from '../VIEW/Bulletin.js';
 
 type Props = {};
 export default class Series extends Component<Props> {
  constructor(props) {
     super(props);
     this.state = {
+      modalVisible: false,
+
       playing: false,
       playType: 'sermon',
       duration: 0,
@@ -26,12 +31,13 @@ export default class Series extends Component<Props> {
     }
   }
 
+
+  toggleModal(visible) {
+    this.setState({modalVisible: !this.state.modalVisible});
+  }
+
   playMedia = (url) => {
      try {
-      // play the file tone.mp3
-      // SoundPlayer.playSoundFile('tone', 'mp3')
-      // or play from url
-      
       this.setState({playing: true},
       this.getCurrentTime
         );
@@ -49,10 +55,9 @@ export default class Series extends Component<Props> {
 
   } 
 
-  getDuration = async () => { // You need the keyword `async`
+  getDuration = async () => { 
     try {
-      const info = await SoundPlayer.getInfo() // Also, you need to await this because it is async
-      // console.log('getInfo', info) // {duration: 12.416, currentTime: 7.691}
+      const info = await SoundPlayer.getInfo() 
       this.setState({duration: info.duration});
 
       
@@ -61,11 +66,10 @@ export default class Series extends Component<Props> {
     }
   }
 
-  getCurrentTime = async () => { // You need the keyword `async`
+  getCurrentTime = async () => { 
     if(this.state.playing){
         try {
-          const info = await SoundPlayer.getInfo() // Also, you need to await this because it is async
-          // console.log('getInfo', info) // {duration: 12.416, currentTime: 7.691}
+          const info = await SoundPlayer.getInfo() 
           this.setState({current_time: info.currentTime},
             this.getCurrentTime);
           
@@ -115,9 +119,6 @@ export default class Series extends Component<Props> {
     let sermonStyle = null;
     let serviceStyle = null;
 
-    // let recordingDuration = 
-    // let recordingCurrentTime = 
-
     if(this.state.playType == 'sermon'){
       sermonStyle = {
     borderWidth: 0.75,
@@ -140,12 +141,25 @@ export default class Series extends Component<Props> {
     return (
       <View style={styles.seriesModal} >
       
+   <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            this.setState({modalVisible: false});
+          }}>
+            <Bulletin
+              dateString={this.props.service.date}/>
+
+          </Modal>
+
             <Text style={[styles.recordingFont]}>{this.props.service.title}</Text>
-      
+            
+
         <View style={[styles.horizontal,{}]}>
           
           <View style={[styles.vertical,{flex:7}]}>
-            <Text style={[styles.recordingFont,{color: 'black', marginTop: -5}]}>{this.props.service.speaker}</Text>
+            <Text style={[styles.recordingFont,{marginTop: -5}]}>{this.props.service.speaker}</Text>
             <Text style={[styles.recordingFont]}>{this.parseDate(this.props.service.date)}</Text>
           </View>
 
@@ -176,6 +190,15 @@ export default class Series extends Component<Props> {
             {playButton}
           </View>
         </View>
+
+
+        <TouchableHighlight
+          onPress={() => {
+            this.toggleModal();
+          }}>
+          <Text style={[styles.recordingFont,{color: 'black', marginLeft: 5}]}>Bulletin</Text>
+          
+        </TouchableHighlight>
 
       </View>
     );
