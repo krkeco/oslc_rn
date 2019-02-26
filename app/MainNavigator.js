@@ -41,6 +41,7 @@ import Hyperlink from 'react-native-hyperlink';
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
+import SideMenu from 'react-native-side-menu';
 
 
 type Props = {};
@@ -137,6 +138,15 @@ export default class MainNavigator extends Component<Props> {
       && this.state.sermonDataReceived){
       this.setState({sermonDataReceived: false});
     }
+
+    const sideMenu = <View>
+      <Text>SideMenu</Text>
+      <Text>App Feedback</Text>
+      <Text>Call Office</Text>
+      <Text>Email Office</Text>
+
+      </View>;
+
 
     let webView =  null;
 
@@ -320,7 +330,15 @@ export default class MainNavigator extends Component<Props> {
 
     if(this.state.current_index == 0){
 
-      menu = null;
+      menu =     <View
+        style={{position: 'absolute', top: 12, left: 12, zIndex:20}}>
+        <TouchableOpacity
+          onPress={() => {this.navigate(0);}}>
+
+          <Text style={{ fontSize: 32, padding: 4, width: 38, height: 38, fontFamily: 'FontAwesome'}}>{Icons.bars}</Text>
+        
+        </TouchableOpacity>
+        </View>;
     }
     if(this.state.canGoBack){
       menu = <View
@@ -348,6 +366,8 @@ export default class MainNavigator extends Component<Props> {
     //               />;
 
     return (
+
+      <SideMenu menu={sideMenu}>
       <View style={[styles.container]}>
         {webView}
         {content}
@@ -359,6 +379,8 @@ export default class MainNavigator extends Component<Props> {
           setSeries={(series) => {this.setSeries(series)}}/>
          
       </View>
+
+      </SideMenu>
     );
   }
 }
