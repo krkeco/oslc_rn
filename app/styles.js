@@ -95,8 +95,27 @@ loader: {
     marginTop:5,
     fontFamily: 'FontAwesome',
   },
+
+  churchInfoContainer: {
+    alignItems: 'center', 
+    flex: 1, 
+    marginLeft: 20, 
+    marginRight: 20
+  },
   officeHyperlink: {
     flex: 1,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  }, 
+
+  sideMenuContainer: {
+    alignItems: 'flex-start', 
+    marginLeft: 5
+  },
+  sideMenuHyperlink: {
     marginLeft: 20,
     marginRight: 20,
     marginTop: 10,

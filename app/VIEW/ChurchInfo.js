@@ -19,7 +19,7 @@ import Communications from 'react-native-communications';
 
 
 type Props = {};
-export default class Office extends Component<Props> {
+export default class ChurchInfo extends Component<Props> {
  constructor(props) {
     super(props);
     this.state = {
@@ -48,7 +48,7 @@ export default class Office extends Component<Props> {
       </View>
 
       <ScrollView>
-      <View style={{alignItems: 'center', flex: 1, marginLeft: 20, marginRight: 20}}>
+      <View style={styles.churchInfoContainer}>
 
 
         <Text style={[styles.large_text,styles.text_underline]}>Services:</Text> 

@@ -27,7 +27,7 @@ import Bulletin from './VIEW/Bulletin.js';
 import ModernBulletin from './VIEW/ModernBulletin.js';
 
 import About from './VIEW/About.js';
-import Office from './VIEW/Office.js';
+import ChurchInfo from './VIEW/ChurchInfo.js';
 
 import SermonsAPI from './API/Sermons.js';
 import SermonsView from './VIEW/Sermons.js';
@@ -37,7 +37,9 @@ import CalendarAPI from './API/Calendar.js';
 
 import NavigatorView from './NavigatorView.js';
 
-import Hyperlink from 'react-native-hyperlink';
+// import Hyperlink from 'react-native-hyperlink';
+import Communications from 'react-native-communications';
+
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
@@ -57,6 +59,7 @@ export default class MainNavigator extends Component<Props> {
       
       //sermon series
       series: null,
+      isOpen: false,
       sermonDataReceived: false,
       calendar: {
         summary: 'a summary',
@@ -89,6 +92,14 @@ export default class MainNavigator extends Component<Props> {
 
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  toggleMenu = () =>{
+    if(this.state.isOpen){
+        this.setState({isOpen: false});
+      }else{
+        this.setState({isOpen: true});
+      }
   }
 
   getDateString = () => {
@@ -139,11 +150,18 @@ export default class MainNavigator extends Component<Props> {
       this.setState({sermonDataReceived: false});
     }
 
-    const sideMenu = <View>
-      <Text>SideMenu</Text>
-      <Text>App Feedback</Text>
-      <Text>Call Office</Text>
-      <Text>Email Office</Text>
+    const sideMenu = <View style={styles.sideMenuContainer}>
+      <Text style={styles.normal_text}>Our Savior</Text>
+      
+          <TouchableOpacity style={styles.sideMenuHyperlink} onPress={() => Communications.email(['OSLC.KC@gmail.com'],null,null,'OSLCArcadia feedback email from Mobile','Hi KC, \n\n\n')}>      
+          <Text style={[styles.normal_text,styles.infoAwesome]}>{Icons.envelope}</Text>
+            <Text style={[{marginTop: 5},styles.small_text]}> App Feedback</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.sideMenuHyperlink} onPress={() => Communications.phonecall('6264477690', true)}>
+          <Text style={[styles.normal_text,styles.infoAwesome]}>{Icons.phone}</Text>
+            <Text style={[{marginTop: 5},styles.small_text]}> Call us</Text>      
+          </TouchableOpacity>
 
       </View>;
 
@@ -264,7 +282,7 @@ export default class MainNavigator extends Component<Props> {
         view: <About/>},
         
         {name: 'office',
-        view: <Office/>},
+        view: <ChurchInfo/>},
 
         {name: 'staff',
         view:  
@@ -333,7 +351,7 @@ export default class MainNavigator extends Component<Props> {
       menu =     <View
         style={{position: 'absolute', top: 12, left: 12, zIndex:20}}>
         <TouchableOpacity
-          onPress={() => {this.navigate(0);}}>
+          onPress={() => {this.toggleMenu();}}>
 
           <Text style={{ fontSize: 32, padding: 4, width: 38, height: 38, fontFamily: 'FontAwesome'}}>{Icons.bars}</Text>
         
@@ -367,7 +385,16 @@ export default class MainNavigator extends Component<Props> {
 
     return (
 
-      <SideMenu menu={sideMenu}>
+      <SideMenu 
+        menu={sideMenu}
+        isOpen={this.state.isOpen}
+        onChange={(isOpen)=>{
+          if(isOpen){
+            this.setState({isOpen: true});
+          }else{
+            this.setState({isOpen: false});
+          }
+        }}>
       <View style={[styles.container]}>
         {webView}
         {content}
