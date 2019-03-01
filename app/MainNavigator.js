@@ -104,16 +104,28 @@ export default class MainNavigator extends Component<Props> {
 
   getDateString = () => {
 
-     var d = new Date();
+    var d = new Date();
     var day = d.getDay();
     diff = d.getDate() - day + (day == 0 ? 0:0); // adjust when day is sunday
     
+    if(day > 4){
+      diff += 7;
+    }
+
     new_day =  new Date(d.setDate(diff));
+    alert(new_day)
     year = d.getFullYear();
     month = d.getMonth() +1;
-    if(month < 10){month = "0" + month;}
+    
+    if(month < 10){
+      month = "0" + month;
+    }
+    
     day = d.getDate();
-    if(day < 10){day = "0" + day;}
+
+    if(day < 10){
+      day = "0" + day;
+    }
     this.setState({dateString: ''+year+''+month+day}); 
 
   }
